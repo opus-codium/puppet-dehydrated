@@ -12,8 +12,9 @@ define letsencrypt_sh::certificate (
   # This exec statement serve as a proxy to determine if this command should be
   # run for this certificate and only then notify the changed exec statement.
   exec { "letsencrypt_sh-${name}":
-    command => '/usr/bin/true',
-    unless  => "/bin/test -r ${letsencrypt_sh::etcdir}/certs/${name}/cert.pem",
+    command => 'true',
+    unless  => "test -r ${letsencrypt_sh::etcdir}/certs/${name}/cert.pem",
+    path    => '/bin:/usr/bin',
     user    => $letsencrypt_sh::user,
     notify  => Class['letsencrypt_sh::changed'],
   }
