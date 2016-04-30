@@ -1,0 +1,5 @@
+Alias /.well-known/acme-challenge/ "<%= @etcdir %>/.acme-challenges/"
+
+<Directory <%= @etcdir %>/.acme-challenges>
+    Require all granted
+</Directory>
