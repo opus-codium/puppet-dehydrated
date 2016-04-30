@@ -21,9 +21,14 @@ class letsencrypt_sh (
   }
   include letsencrypt_sh::config
   include letsencrypt_sh::domains
+  include letsencrypt_sh::changed
 
   Class['letsencrypt_sh::config'] ->
-  Class['letsencrypt_sh::domains']
+  Class['letsencrypt_sh::domains'] ->
+  Class['letsencrypt_sh::changed']
+
+  Class['letsencrypt_sh::domains'] ~>
+  Class['letsencrypt_sh::changed']
 
   if $apache_integration {
     include letsencrypt_sh::apache
