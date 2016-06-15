@@ -5,6 +5,7 @@ class letsencrypt_sh::repo {
     ensure   => present,
     provider => 'git',
     source   => 'https://github.com/lukas2511/letsencrypt.sh.git',
+    revision => 'v0.2.0',
     user     => $letsencrypt_sh::user,
   }
 }
