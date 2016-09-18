@@ -14,5 +14,8 @@ class letsencrypt_sh::params {
       $package = 'letsencrypt.sh'
       $etcdir = '/usr/local/etc/letsencrypt.sh'
     }
+    default: {
+      fail("unsupported osfamily: ${::osfamily}")
+    }
   }
 }
