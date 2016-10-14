@@ -1,5 +1,18 @@
 # letsencrypt\_sh
 
+#### Table of Contents
+
+1. [Module Description - What the module does and why it is useful](#module-description)
+2. [Setup - The basics of getting started with letsencrypt\_sh](#setup)
+    * [Beginning with letsencrypt\_sh](#beginning-with-letsencrypt_sh)
+3. [Usage - Configuration options and additional functionality](#usage)
+    * [Generate a simple certificate](#generate-a-simple-certificate)
+    * [Generate a certificate with SAN](#generate-a-certificate-with-san)
+    * [Renewing certificates with cron](#renewing-certificates-with-cron)
+    * [Serving challenges with Apache](#serving-challenges-with-apache)
+4. [Reference - An under-the-hood peek at what the module is doing and how](#reference)
+    * [Classes](#classes)
+
 ## Module Description
 
 The letsencrypt\_sh module lets you use Puppet to manage [Let's Encrypt](https://letsencrypt.org/) certificates creation and renewal.
