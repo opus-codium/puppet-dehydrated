@@ -1,36 +1,76 @@
-# puppet-letsencrypt_sh
+# letsencrypt\_sh
+
+## Module Description
+
+The letsencrypt\_sh module lets you use Puppet to manage [Let's Encrypt](https://letsencrypt.org/) certificates creation and renewal.
+
+## Setup
+
+### Beginning with letsencrypt\_sh
+
+Let's encrypt needs a contact address that must be passed to the `letsencrypt_sh` class:
+
+```puppet
+class { 'letsencrypt_sh':
+  contact_email => 'user@example.com',
+}
+```
+
+This is enought to get started and creating certificates.
 
 ## Usage
 
-~~~puppet
+### Generate a simple certificate
+
+After including the required `letsencrypt_sh` class, each `letsencrypt_sh::certificate` will produce a single certificate file:
+
+```puppet
+class { 'letsencrypt_sh':
+  contact_email => 'user@example.com',
+}
+
+letsencrypt_sh::certificate { 'example.com':
+}
+```
+
+### Generate a certificate with SAN
+
+A `letsencrypt_sh::certificate` can use the `domain` parameter to indicate Subject Alternative Names (SAN).
+
+```puppet
 class { 'letsencrypt_sh':
   contact_email => 'user@example.com',
 }
 
 letsencrypt_sh::certificate { 'example.com':
   domains => [
-    'foo.example.com',
-    'bar.example.com',
+    'www.example.com',
+    'example.net',
+    'www.example.net'
   ],
 }
-~~~
+```
 
-## Cron integration
+## Renewing certificates with cron
 
-The `cron_integration` parameter can be set to `true` in order to renew certificates before they expire.
+The `cron_integration` parameter of the `letsencrypt_sh` class configures cron to renew certificates before they expire.
 
-~~~puppet
+```puppet
 class { 'letsencrypt_sh':
   contact_email    => 'user@example.com',
   cron_integration => true,
 }
-~~~
+```
 
-## Apache integration
+### Serving challenges with Apache
 
-The module can configure apache to serve the generated challenges.  In such a situation, redirecting all HTTP requests to HTTPS except those releated to letsencrypt's validation can be achieved as in the following example:
+The `apache_integration` parameter of the `letsencrypt_sh` class configures apache to serve the challenges used for domain validation.
 
-~~~puppet
+The following example redirect all HTTP requests to HTTPS except those releated to letsencrypt's validation:
+
+```puppet
+include ::apache
+
 class { 'letsencrypt_sh':
   contact_email      => 'user@example.com',
   apache_integration => true,
@@ -52,4 +92,35 @@ apache::vhost { 'main':
     },
   ],
 }
-~~~
+```
+
+## Reference
+
+### Classes
+
+#### Public Classes
+
+* [`letsencrypt_sh`](#class-letsencrypt_sh)
+* [`letsencrypt_sh::certificate`](#class-letsencrypt_shcertificate)
+
+#### Class: `letsencrypt_sh`
+
+Main class used to setup the system.
+
+##### Required parameters
+
+* `contact_email`: The e-mail address Let's Encrypt can use to reach you regarding your certificates.
+
+##### Optional parameters
+
+* `apache_integration`: Specifies whether to setup apache to serve the generated challenges. Default: 'false'.
+* `cron_integration`: Specifies whether to setup cron to automatically renew certificates. Default: 'false'.
+* `user`: Specifies the user account used to manage certificates. Default: 'letsencrypt'.
+
+#### Class: `letsencrypt_sh::certificate`
+
+Class used to describe the certificates that should be maintained.
+
+##### Parameters (all optional)
+
+* `domains`: Specifies the list of domains to include as SAN (Subject Alternative Names).
