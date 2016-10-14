@@ -12,6 +12,7 @@
     * [Serving challenges with Apache](#serving-challenges-with-apache)
 4. [Reference - An under-the-hood peek at what the module is doing and how](#reference)
     * [Classes](#classes)
+    * [Defined Types](#defined-types)
 
 ## Module Description
 
@@ -114,7 +115,10 @@ apache::vhost { 'main':
 #### Public Classes
 
 * [`letsencrypt_sh`](#class-letsencrypt_sh)
-* [`letsencrypt_sh::certificate`](#class-letsencrypt_shcertificate)
+
+### Defined Types
+
+* [`letsencrypt_sh::certificate`](#defined-type-letsencrypt_shcertificate)
 
 #### Class: `letsencrypt_sh`
 
@@ -130,7 +134,7 @@ Main class used to setup the system.
 * `cron_integration`: Specifies whether to setup cron to automatically renew certificates. Default: 'false'.
 * `user`: Specifies the user account used to manage certificates. Default: 'letsencrypt'.
 
-#### Class: `letsencrypt_sh::certificate`
+#### Defined Type: `letsencrypt_sh::certificate`
 
 Class used to describe the certificates that should be maintained.
 
