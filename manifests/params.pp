@@ -10,9 +10,9 @@ class letsencrypt_sh::params {
     }
     'FreeBSD': {
       $apache_user = 'www'
-      $bin = '/usr/local/bin/letsencrypt.sh'
-      $package = 'letsencrypt.sh'
-      $etcdir = '/usr/local/etc/letsencrypt.sh'
+      $bin = '/usr/local/bin/dehydrated'
+      $package = 'dehydrated'
+      $etcdir = '/usr/local/etc/dehydrated'
     }
     default: {
       fail("unsupported osfamily: ${::osfamily}")

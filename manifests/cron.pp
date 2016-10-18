@@ -17,17 +17,17 @@ class letsencrypt_sh::cron {
       }
     }
     'FreeBSD': {
-      file_line { 'weekly_letsencrypt_enable':
+      file_line { 'weekly_dehydrated_enable':
         ensure => $ensure,
         path   => '/etc/periodic.conf',
-        line   => 'weekly_letsencrypt_enable="YES"',
-        match  => '^weekly_letsencrypt_enable=',
+        line   => 'weekly_dehydrated_enable="YES"',
+        match  => '^weekly_(letsencrypt|dehydrated)_enable=',
       }
-      file_line { 'weekly_letsencrypt_user':
+      file_line { 'weekly_dehydrated_user':
         ensure => $ensure,
         path   => '/etc/periodic.conf',
-        line   => "weekly_letsencrypt_user=\"${letsencrypt_sh::user}\"",
-        match  => '^weekly_letsencrypt_user=',
+        line   => "weekly_dehydrated_user=\"${letsencrypt_sh::user}\"",
+        match  => '^weekly_(letsencrypt|dehydrated)_user=',
       }
     }
   }
