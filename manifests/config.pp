@@ -3,7 +3,7 @@ class letsencrypt_sh::config {
     ensure  => present,
     owner   => $letsencrypt_sh::user,
     group   => $letsencrypt_sh::user,
-    content => "CONTACT_EMAIL=${letsencrypt_sh::contact_email}\n",
+    content => "CONTACT_EMAIL=${letsencrypt_sh::contact_email}\nWELLKNOWN=${letsencrypt_sh::etcdir}/.acme-challenges\n",
   }
 
   file { "${letsencrypt_sh::etcdir}/.acme-challenges":
