@@ -17,7 +17,7 @@
 
 ## Module Description
 
-The dehydratedh module lets you use Puppet to manage [Let's Encrypt](https://letsencrypt.org/) certificates creation and renewal.
+The dehydrated module lets you use Puppet to manage [Let's Encrypt](https://letsencrypt.org/) certificates creation and renewal using [dehydrated](https://github.com/lukas2511/dehydrated).
 
 ## Setup
 
