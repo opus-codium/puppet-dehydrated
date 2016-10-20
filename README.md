@@ -65,7 +65,7 @@ letsencrypt_sh::certificate { 'example.com':
 }
 ```
 
-## Renewing certificates with cron
+### Renewing certificates with cron
 
 The `cron_integration` parameter of the `letsencrypt_sh` class configures cron to renew certificates before they expire.
 
