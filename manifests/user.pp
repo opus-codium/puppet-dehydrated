@@ -20,7 +20,7 @@ class dehydrated::user {
 
   if $dehydrated::previous_etcdir {
     exec { 'dehydrated-migrate-previous-data':
-      path        => '/bin:/usr/bin',
+      path        => '/bin:/usr/bin:/sbin:/usr/sbin',
       command     => "mv ${dehydrated::previous_etcdir} ${dehydrated::etcdir} && chown -R ${dehydrated::user}:${dehydrated::user} ${dehydrated::etcdir} && ln -s ${dehydrated::etcdir} ${dehydrated::previous_etcdir}",
       refreshonly => true,
       onlyif      => "[ -d '${dehydrated::previous_etcdir}' -a ! -h '${dehydrated::previous_etcdir}' ]",
