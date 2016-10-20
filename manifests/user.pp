@@ -23,7 +23,7 @@ class letsencrypt_sh::user {
       path        => '/bin:/usr/bin',
       command     => "mv ${letsencrypt_sh::previous_etcdir} ${letsencrypt_sh::etcdir} && chown -R ${letsencrypt_sh::user}:${letsencrypt_sh::user} ${letsencrypt_sh::etcdir} && ln -s ${letsencrypt_sh::etcdir} ${letsencrypt_sh::previous_etcdir}",
       refreshonly => true,
-      unless      => "[ -h '${letsencrypt_sh::previous_etcdir}' ]",
+      onlyif      => "[ -d '${letsencrypt_sh::previous_etcdir}' -a ! -h '${letsencrypt_sh::previous_etcdir}' ]",
     }
 
     User[$letsencrypt_sh::user] ~>
