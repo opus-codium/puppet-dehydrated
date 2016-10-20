@@ -16,6 +16,9 @@ define letsencrypt_sh::certificate (
     unless  => "test -r ${letsencrypt_sh::etcdir}/certs/${name}/cert.pem",
     path    => '/bin:/usr/bin',
     user    => $letsencrypt_sh::user,
-    notify  => Class['letsencrypt_sh::changed'],
   }
+
+  Class['letsencrypt_sh::domains'] ->
+  Exec["letsencrypt_sh-${name}"] ~>
+  Class['letsencrypt_sh::changed']
 }
