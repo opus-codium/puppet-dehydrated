@@ -21,9 +21,9 @@ class letsencrypt_sh::user {
   if $letsencrypt_sh::previous_etcdir {
     exec { 'letsencrypt_sh-migrate-previous-data':
       path        => '/bin:/usr/bin',
-      command     => "mv ${letsencrypt_sh::previous_etcdir} ${letsencrypt_sh::etcdir} && chown -R ${letsencrypt_sh::user}:${letsencrypt_sh::user} ${letsencrypt_sh::etcdir}",
+      command     => "mv ${letsencrypt_sh::previous_etcdir} ${letsencrypt_sh::etcdir} && chown -R ${letsencrypt_sh::user}:${letsencrypt_sh::user} ${letsencrypt_sh::etcdir} && ln -s ${letsencrypt_sh::etcdir} ${letsencrypt_sh::previous_etcdir}",
       refreshonly => true,
-      onlyif      => "[ -d '${letsencrypt_sh::previous_etcdir}' ]",
+      unless      => "[ -h '${letsencrypt_sh::previous_etcdir}' ]",
     }
 
     User[$letsencrypt_sh::user] ~>
