@@ -4,8 +4,8 @@ class letsencrypt_sh::repo {
   vcsrepo { $letsencrypt_sh::etcdir:
     ensure   => present,
     provider => 'git',
-    source   => 'https://github.com/lukas2511/letsencrypt.sh.git',
-    revision => 'v0.2.0',
+    source   => 'https://github.com/lukas2511/dehydrated.git',
+    revision => 'v0.3.1',
     user     => $letsencrypt_sh::user,
   }
 }

@@ -8,7 +8,7 @@ define letsencrypt_sh::certificate (
     content => inline_template("<%= @name %> <%= @domains.reject { |name| name == @name }.join(' ') %>\n"),
   }
 
-  # FIXME: Any certificate change should trigger a single `letsencrypt.sh -c`.
+  # FIXME: Any certificate change should trigger a single `dehydrated -c`.
   # This exec statement serve as a proxy to determine if this command should be
   # run for this certificate and only then notify the changed exec statement.
   exec { "letsencrypt_sh-${name}":

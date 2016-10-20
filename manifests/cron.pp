@@ -8,8 +8,11 @@ class letsencrypt_sh::cron {
   case $::osfamily {
     'Debian': {
       cron { 'weekly_letsencrypt':
+        ensure  => absent,
+      }
+      cron { 'weekly_dehydrated':
         ensure  => $ensure,
-        command => "${letsencrypt_sh::etcdir}/letsencrypt.sh -c",
+        command => "${letsencrypt_sh::bin} -c",
         user    => $letsencrypt_sh::user,
         weekday => 0,
         hour    => 3,
