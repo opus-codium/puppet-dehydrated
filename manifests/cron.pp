@@ -33,5 +33,8 @@ class letsencrypt_sh::cron {
         match  => '^weekly_(letsencrypt|dehydrated)_user=',
       }
     }
+    default: {
+      fail("Unsupported osfamily ${::osfamily}")
+    }
   }
 }
