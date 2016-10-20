@@ -1,14 +1,14 @@
-class letsencrypt_sh::changed {
-  include letsencrypt_sh
+class dehydrated::changed {
+  include dehydrated
 
-  exec { "${letsencrypt_sh::bin} -c":
+  exec { "${dehydrated::bin} -c":
     refreshonly => true,
     path        => '/bin:/usr/bin:/usr/local/bin',
-    user        => $letsencrypt_sh::user,
+    user        => $dehydrated::user,
   }
 
-  if $letsencrypt_sh::apache_integration {
+  if $dehydrated::apache_integration {
     Class['Apache::Service'] ->
-    Exec["${letsencrypt_sh::bin} -c"]
+    Exec["${dehydrated::bin} -c"]
   }
 }

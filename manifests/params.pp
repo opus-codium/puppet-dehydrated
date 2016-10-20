@@ -1,4 +1,4 @@
-class letsencrypt_sh::params {
+class dehydrated::params {
   $user = 'dehydrated'
   $previous_user = 'letsencrypt'
   $config = 'config'

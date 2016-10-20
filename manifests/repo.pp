@@ -1,11 +1,11 @@
-class letsencrypt_sh::repo {
-  include letsencrypt_sh
+class dehydrated::repo {
+  include dehydrated
 
-  vcsrepo { $letsencrypt_sh::etcdir:
+  vcsrepo { $dehydrated::etcdir:
     ensure   => present,
     provider => 'git',
     source   => 'https://github.com/lukas2511/dehydrated.git',
     revision => 'v0.3.1',
-    user     => $letsencrypt_sh::user,
+    user     => $dehydrated::user,
   }
 }

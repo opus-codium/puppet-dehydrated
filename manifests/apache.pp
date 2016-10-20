@@ -1,12 +1,12 @@
-class letsencrypt_sh::apache {
-  include letsencrypt_sh
+class dehydrated::apache {
+  include dehydrated
 
   include apache
 
-  $etcdir = $letsencrypt_sh::etcdir
+  $etcdir = $dehydrated::etcdir
 
-  apache::custom_config { 'letsencrypt_sh':
+  apache::custom_config { 'dehydrated':
     ensure  => present,
-    content => template('letsencrypt_sh/apache_alias.conf.erb'),
+    content => template('dehydrated/apache_alias.conf.erb'),
   }
 }

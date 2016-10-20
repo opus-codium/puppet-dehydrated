@@ -1,8 +1,8 @@
-class letsencrypt_sh::domains {
-  concat { "${letsencrypt_sh::etcdir}/domains.txt":
+class dehydrated::domains {
+  concat { "${dehydrated::etcdir}/domains.txt":
     ensure => present,
-    owner  => $letsencrypt_sh::user,
-    group  => $letsencrypt_sh::group,
+    owner  => $dehydrated::user,
+    group  => $dehydrated::group,
     mode   => '0644',
   }
 }

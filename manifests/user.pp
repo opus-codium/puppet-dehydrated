@@ -1,38 +1,38 @@
-class letsencrypt_sh::user {
-  include letsencrypt_sh
+class dehydrated::user {
+  include dehydrated
 
-  user { $letsencrypt_sh::user:
+  user { $dehydrated::user:
     ensure     => present,
     system     => true,
-    home       => $letsencrypt_sh::etcdir,
+    home       => $dehydrated::etcdir,
     managehome => false, # We do not want /etc/skel files.
   }
 
-  file { $letsencrypt_sh::etcdir:
+  file { $dehydrated::etcdir:
     ensure => directory,
-    owner  => $letsencrypt_sh::user,
-    group  => $letsencrypt_sh::apache_user,
+    owner  => $dehydrated::user,
+    group  => $dehydrated::apache_user,
     mode   => '0710',
   }
 
-  User[$letsencrypt_sh::user] ->
-  File[$letsencrypt_sh::etcdir]
+  User[$dehydrated::user] ->
+  File[$dehydrated::etcdir]
 
-  if $letsencrypt_sh::previous_etcdir {
-    exec { 'letsencrypt_sh-migrate-previous-data':
+  if $dehydrated::previous_etcdir {
+    exec { 'dehydrated-migrate-previous-data':
       path        => '/bin:/usr/bin',
-      command     => "mv ${letsencrypt_sh::previous_etcdir} ${letsencrypt_sh::etcdir} && chown -R ${letsencrypt_sh::user}:${letsencrypt_sh::user} ${letsencrypt_sh::etcdir} && ln -s ${letsencrypt_sh::etcdir} ${letsencrypt_sh::previous_etcdir}",
+      command     => "mv ${dehydrated::previous_etcdir} ${dehydrated::etcdir} && chown -R ${dehydrated::user}:${dehydrated::user} ${dehydrated::etcdir} && ln -s ${dehydrated::etcdir} ${dehydrated::previous_etcdir}",
       refreshonly => true,
-      onlyif      => "[ -d '${letsencrypt_sh::previous_etcdir}' -a ! -h '${letsencrypt_sh::previous_etcdir}' ]",
+      onlyif      => "[ -d '${dehydrated::previous_etcdir}' -a ! -h '${dehydrated::previous_etcdir}' ]",
     }
 
-    User[$letsencrypt_sh::user] ~>
-    Exec['letsencrypt_sh-migrate-previous-data'] ->
-    File[$letsencrypt_sh::etcdir]
+    User[$dehydrated::user] ~>
+    Exec['dehydrated-migrate-previous-data'] ->
+    File[$dehydrated::etcdir]
   }
 
-  if $letsencrypt_sh::previous_user {
-    user { $letsencrypt_sh::previous_user:
+  if $dehydrated::previous_user {
+    user { $dehydrated::previous_user:
       ensure => absent,
     }
   }

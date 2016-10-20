@@ -1,5 +1,5 @@
-class letsencrypt_sh::package {
-  package { $letsencrypt_sh::package:
+class dehydrated::package {
+  package { $dehydrated::package:
     ensure => installed,
   }
 }

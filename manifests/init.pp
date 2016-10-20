@@ -1,47 +1,47 @@
-class letsencrypt_sh (
+class dehydrated (
   $contact_email,
 
   $apache_integration = false,
   $cron_integration = false,
 
-  $user = $letsencrypt_sh::params::user,
-  $previous_user = $letsencrypt_sh::params::previous_user,
-  $config = $letsencrypt_sh::params::config,
-  $apache_user = $letsencrypt_sh::params::apache_user,
-  $bin = $letsencrypt_sh::bin,
-  $etcdir = $letsencrypt_sh::etcdir,
-  $previous_etcdir = $letsencrypt_sh::previous_etcdir,
-  $package = $letsencrypt_sh::params::package,
-) inherits letsencrypt_sh::params {
+  $user = $dehydrated::params::user,
+  $previous_user = $dehydrated::params::previous_user,
+  $config = $dehydrated::params::config,
+  $apache_user = $dehydrated::params::apache_user,
+  $bin = $dehydrated::bin,
+  $etcdir = $dehydrated::etcdir,
+  $previous_etcdir = $dehydrated::previous_etcdir,
+  $package = $dehydrated::params::package,
+) inherits dehydrated::params {
 
-  include letsencrypt_sh::user
+  include dehydrated::user
   if $package {
-    include letsencrypt_sh::package
+    include dehydrated::package
 
-    Class['letsencrypt_sh::user'] ->
-    Class['letsencrypt_sh::package'] ->
-    Class['letsencrypt_sh::config']
+    Class['dehydrated::user'] ->
+    Class['dehydrated::package'] ->
+    Class['dehydrated::config']
   } else {
-    include letsencrypt_sh::repo
+    include dehydrated::repo
 
-    Class['letsencrypt_sh::user'] ->
-    Class['letsencrypt_sh::repo'] ->
-    Class['letsencrypt_sh::config']
+    Class['dehydrated::user'] ->
+    Class['dehydrated::repo'] ->
+    Class['dehydrated::config']
   }
-  include letsencrypt_sh::config
-  include letsencrypt_sh::domains
-  include letsencrypt_sh::changed
+  include dehydrated::config
+  include dehydrated::domains
+  include dehydrated::changed
 
-  Class['letsencrypt_sh::config'] ->
-  Class['letsencrypt_sh::domains'] ->
-  Class['letsencrypt_sh::changed']
+  Class['dehydrated::config'] ->
+  Class['dehydrated::domains'] ->
+  Class['dehydrated::changed']
 
-  Class['letsencrypt_sh::domains'] ~>
-  Class['letsencrypt_sh::changed']
+  Class['dehydrated::domains'] ~>
+  Class['dehydrated::changed']
 
   if $apache_integration {
-    include letsencrypt_sh::apache
+    include dehydrated::apache
   }
 
-  include letsencrypt_sh::cron
+  include dehydrated::cron
 }
