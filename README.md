@@ -30,7 +30,7 @@ class { 'letsencrypt_sh':
 }
 ```
 
-This is enought to get started and creating certificates.
+This is enough to get started and creating certificates.
 
 ## Usage
 
@@ -80,7 +80,7 @@ class { 'letsencrypt_sh':
 
 The `apache_integration` parameter of the `letsencrypt_sh` class configures apache to serve the challenges used for domain validation.
 
-The following example redirect all HTTP requests to HTTPS except those releated to letsencrypt's validation:
+The following example redirect all HTTP requests to HTTPS except those related to letsencrypt's validation:
 
 ```puppet
 include ::apache
