@@ -1,5 +1,6 @@
 class dehydrated::params {
   $user = 'dehydrated'
+  $group = 'dehydrated'
   $previous_user = 'letsencrypt'
   $config = 'config'
 

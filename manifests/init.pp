@@ -8,6 +8,7 @@ class dehydrated (
   $bin             = $::dehydrated::params::bin,
   $config          = $::dehydrated::params::config,
   $etcdir          = $::dehydrated::params::etcdir,
+  $group           = $::dehydrated::params::group,
   $package         = $::dehydrated::params::package,
   $previous_etcdir = $::dehydrated::params::previous_etcdir,
   $previous_user   = $::dehydrated::params::previous_user,
