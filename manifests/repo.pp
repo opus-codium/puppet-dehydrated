@@ -1,5 +1,5 @@
 class dehydrated::repo {
-  include dehydrated
+  include ::dehydrated
 
   vcsrepo { $dehydrated::etcdir:
     ensure   => present,

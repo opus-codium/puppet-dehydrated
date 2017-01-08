@@ -1,5 +1,5 @@
 class dehydrated::changed {
-  include dehydrated
+  include ::dehydrated
 
   exec { "${dehydrated::bin} -c":
     refreshonly => true,

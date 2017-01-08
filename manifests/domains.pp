@@ -1,4 +1,6 @@
 class dehydrated::domains {
+  include ::dehydrated
+
   concat { "${dehydrated::etcdir}/domains.txt":
     ensure => present,
     owner  => $dehydrated::user,

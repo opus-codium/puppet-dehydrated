@@ -2,16 +2,16 @@ class dehydrated (
   $contact_email,
 
   $apache_integration = false,
-  $cron_integration = false,
+  $cron_integration   = false,
 
-  $user = $dehydrated::params::user,
-  $previous_user = $dehydrated::params::previous_user,
-  $config = $dehydrated::params::config,
-  $apache_user = $dehydrated::params::apache_user,
-  $bin = $dehydrated::bin,
-  $etcdir = $dehydrated::etcdir,
-  $previous_etcdir = $dehydrated::previous_etcdir,
-  $package = $dehydrated::params::package,
+  $apache_user     = $::dehydrated::params::apache_user,
+  $bin             = $::dehydrated::params::bin,
+  $config          = $::dehydrated::params::config,
+  $etcdir          = $::dehydrated::params::etcdir,
+  $package         = $::dehydrated::params::package,
+  $previous_etcdir = $::dehydrated::params::previous_etcdir,
+  $previous_user   = $::dehydrated::params::previous_user,
+  $user            = $::dehydrated::params::user,
 ) inherits dehydrated::params {
 
   include dehydrated::user

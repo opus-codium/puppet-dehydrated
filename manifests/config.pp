@@ -1,4 +1,6 @@
 class dehydrated::config {
+  include ::dehydrated
+
   file { "${dehydrated::etcdir}/${dehydrated::config}":
     ensure  => present,
     owner   => $dehydrated::user,

@@ -1,5 +1,5 @@
 class dehydrated::user {
-  include dehydrated
+  include ::dehydrated
 
   user { $dehydrated::user:
     ensure     => present,

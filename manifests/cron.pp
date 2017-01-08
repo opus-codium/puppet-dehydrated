@@ -1,4 +1,6 @@
 class dehydrated::cron {
+  include ::dehydrated
+
   if $dehydrated::cron_integration {
     $ensure = 'present'
   } else {
