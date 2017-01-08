@@ -1,0 +1,3 @@
+class { 'dehydrated':
+  contact_email => 'user@example.com',
+}
