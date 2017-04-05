@@ -85,6 +85,7 @@ The following example redirect all HTTP requests to HTTPS except those related t
 
 ```puppet
 include ::apache
+include ::apache::mod::rewrite
 
 class { 'dehydrated':
   contact_email      => 'user@example.com',
