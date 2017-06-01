@@ -77,6 +77,8 @@ class { 'dehydrated':
 }
 ```
 
+**Please note that the web server is not automatically restarted when certificates are renewed.**
+
 ### Serving challenges with Apache
 
 The `apache_integration` parameter of the `dehydrated` class configures apache to serve the challenges used for domain validation.
