@@ -50,7 +50,7 @@ dehydrated::certificate { 'example.com':
 
 ### Generate a certificate with SAN
 
-A `dehydrated::certificate` can use the `domain` parameter to indicate Subject Alternative Names (SAN).
+A `dehydrated::certificate` can use the `domains` parameter to indicate Subject Alternative Names (SAN).
 
 ```puppet
 class { 'dehydrated':
