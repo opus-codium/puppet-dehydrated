@@ -1,0 +1,8 @@
+<% unless $dehydrated::etcdir =~ Undef { -%>
+# Output directory for challenge-tokens to be served by webserver or deployed in HOOK (default: /var/www/dehydrated)
+WELLKNOWN="<%= $dehydrated::etcdir %>"
+<% } %>
+<% unless $dehydrated::contact_email =~ Undef { -%>
+# E-mail to use during the registration (default: <unset>)
+CONTACT_EMAIL="<%= $dehydrated::contact_email %>"
+<% } -%>
