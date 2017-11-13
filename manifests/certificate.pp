@@ -1,5 +1,5 @@
 define dehydrated::certificate (
-  $domains = [],
+  Array[String] $domains = [],
 ) {
   include ::dehydrated
 

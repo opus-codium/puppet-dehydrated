@@ -1,18 +1,18 @@
 class dehydrated (
-  $contact_email,
+  String                      $contact_email,
 
-  $apache_user,
-  $bin,
-  $config,
-  $etcdir,
-  $group,
-  $package,
-  $previous_etcdir,
-  $previous_user,
-  $user,
+  String                      $apache_user,
+  String                      $bin,
+  String                      $config,
+  String                      $etcdir,
+  String                      $group,
+  Optional[String]            $package,
+  String                      $previous_etcdir,
+  String                      $previous_user,
+  String                      $user,
 
-  $apache_integration = false,
-  $cron_integration   = false,
+  Boolean                     $apache_integration = false,
+  Boolean                     $cron_integration   = false,
 
   Optional[Enum['yes', 'no']] $private_key_renew = undef,
 ) {
