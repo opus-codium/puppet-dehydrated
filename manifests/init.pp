@@ -14,6 +14,7 @@ class dehydrated (
   $apache_integration = false,
   $cron_integration   = false,
 
+  Optional[Enum['yes', 'no']] $private_key_renew = undef,
 ) {
 
   include dehydrated::user

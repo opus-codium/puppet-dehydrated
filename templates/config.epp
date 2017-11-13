@@ -2,6 +2,10 @@
 # Output directory for challenge-tokens to be served by webserver or deployed in HOOK (default: /var/www/dehydrated)
 WELLKNOWN="<%= $dehydrated::etcdir %>"
 <% } %>
+<% unless $dehydrated::private_key_renew =~ Undef { -%>
+# Regenerate private keys instead of just signing new certificates on renewal (default: yes)
+PRIVATE_KEY_RENEW="<%= $dehydrated::private_key_renew %>"
+<% } %>
 <% unless $dehydrated::contact_email =~ Undef { -%>
 # E-mail to use during the registration (default: <unset>)
 CONTACT_EMAIL="<%= $dehydrated::contact_email %>"

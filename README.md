@@ -147,6 +147,7 @@ Main class used to setup the system.
 
 * `apache_integration`: Specifies whether to setup apache to serve the generated challenges. Default: 'false'.
 * `cron_integration`: Specifies whether to setup cron to automatically renew certificates. Default: 'false'.
+* `private_key_renew`: Regenerate private keys instead of just signing new certificates on renewal. Default: 'yes'.
 * `user`: Specifies the user account used to manage certificates. Default: 'dehydrated'.
 
 #### Defined Type: `dehydrated::certificate`
