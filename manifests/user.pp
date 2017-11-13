@@ -15,8 +15,8 @@ class dehydrated::user {
     mode   => '0710',
   }
 
-  User[$dehydrated::user] ->
-  File[$dehydrated::etcdir]
+  User[$dehydrated::user]
+  -> File[$dehydrated::etcdir]
 
   if $dehydrated::previous_etcdir {
     exec { 'dehydrated-migrate-previous-data':
@@ -26,9 +26,9 @@ class dehydrated::user {
       onlyif      => "[ -d '${dehydrated::previous_etcdir}' -a ! -h '${dehydrated::previous_etcdir}' ]",
     }
 
-    User[$dehydrated::user] ~>
-    Exec['dehydrated-migrate-previous-data'] ->
-    File[$dehydrated::etcdir]
+    User[$dehydrated::user]
+    ~> Exec['dehydrated-migrate-previous-data']
+    -> File[$dehydrated::etcdir]
   }
 
   if $dehydrated::previous_user {

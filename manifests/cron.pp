@@ -7,7 +7,7 @@ class dehydrated::cron {
     $ensure = 'absent'
   }
 
-  case $::osfamily {
+  case $facts['os']['family'] {
     'Debian': {
       cron { 'weekly_letsencrypt':
         ensure  => absent,
@@ -36,7 +36,7 @@ class dehydrated::cron {
       }
     }
     default: {
-      fail("Unsupported osfamily ${::osfamily}")
+      fail("Unsupported osfamily ${facts['os']['family']}")
     }
   }
 }

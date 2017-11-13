@@ -8,7 +8,7 @@ class dehydrated::changed {
   }
 
   if $dehydrated::apache_integration {
-    Class['Apache::Service'] ->
-    Exec["${dehydrated::bin} --accept-terms -c"]
+    Class['Apache::Service']
+    -> Exec["${dehydrated::bin} --accept-terms -c"]
   }
 }
