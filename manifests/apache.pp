@@ -1,7 +1,7 @@
 class dehydrated::apache {
-  include ::dehydrated
+  include dehydrated
 
-  include ::apache
+  include apache
 
   $etcdir = $dehydrated::etcdir
 

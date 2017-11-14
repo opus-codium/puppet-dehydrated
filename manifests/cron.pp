@@ -1,5 +1,5 @@
 class dehydrated::cron {
-  include ::dehydrated
+  include dehydrated
 
   if $dehydrated::cron_integration {
     $ensure = 'present'

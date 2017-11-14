@@ -1,7 +1,7 @@
 define dehydrated::certificate (
   Array[String] $domains = [],
 ) {
-  include ::dehydrated
+  include dehydrated
 
   concat::fragment { "${dehydrated::etcdir}/domains.txt-${name}":
     target  => "${dehydrated::etcdir}/domains.txt",

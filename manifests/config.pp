@@ -1,5 +1,5 @@
 class dehydrated::config {
-  include ::dehydrated
+  include dehydrated
 
   file { "${dehydrated::etcdir}/${dehydrated::config}":
     ensure  => present,
