@@ -4,7 +4,7 @@ WELLKNOWN="<%= $dehydrated::etcdir %>"
 <% } %>
 <% unless $dehydrated::private_key_renew =~ Undef { -%>
 # Regenerate private keys instead of just signing new certificates on renewal (default: yes)
-PRIVATE_KEY_RENEW="<%= $dehydrated::private_key_renew %>"
+PRIVATE_KEY_RENEW="<%= bool2str($dehydrated::private_key_renew, 'yes', 'no') %>"
 <% } %>
 <% unless $dehydrated::contact_email =~ Undef { -%>
 # E-mail to use during the registration (default: <unset>)

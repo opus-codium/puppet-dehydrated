@@ -12,7 +12,7 @@ class dehydrated (
   Boolean                     $apache_integration = false,
   Boolean                     $cron_integration   = false,
 
-  Optional[Enum['yes', 'no']] $private_key_renew = undef,
+  Optional[Boolean]           $private_key_renew = undef,
 ) {
 
   include dehydrated::user
