@@ -1,9 +1,6 @@
 class dehydrated (
-  String                      $contact_email,
-
   String                      $apache_user,
   String                      $bin,
-  String                      $config,
   String                      $etcdir,
   String                      $group,
   Optional[String]            $package,
@@ -12,7 +9,21 @@ class dehydrated (
   Boolean                     $apache_integration = false,
   Boolean                     $cron_integration   = false,
 
-  Optional[Boolean]           $private_key_renew = undef,
+  Optional[Variant[Integer[4,4],Integer[6,6]]]     $ip_version           = undef,
+  Optional[Stdlib::Httpurl]                        $ca                   = undef,
+  Optional[Stdlib::Httpurl]                        $ca_terms             = undef,
+  Optional[String]                                 $license              = undef,
+  Optional[Enum['http-01', 'dns-01']]              $challengetype        = undef,
+  Optional[Integer[0]]                             $keysize              = undef,
+  Optional[String]                                 $openssl_cnf          = undef,
+  Optional[String]                                 $hook                 = undef,
+  Optional[Boolean]                                $hook_chain           = undef,
+  Optional[Integer[0]]                             $renew_days           = undef,
+  Optional[Boolean]                                $private_key_renew    = undef,
+  Optional[Boolean]                                $private_key_rollover = undef,
+  Optional[Enum['rsa', 'prime256v1', 'secp384r1']] $key_algo             = undef,
+  String                                           $contact_email, # lint:ignore:parameter_order
+  Optional[Boolean]                                $ocsp_must_staple     = undef,
 ) {
 
   include dehydrated::user

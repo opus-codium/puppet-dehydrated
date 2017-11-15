@@ -3,10 +3,8 @@ class dehydrated::apache {
 
   include apache
 
-  $etcdir = $dehydrated::etcdir
-
   apache::custom_config { 'dehydrated':
     ensure  => present,
-    content => template('dehydrated/apache_alias.conf.erb'),
+    content => epp('dehydrated/apache_alias.conf.epp'),
   }
 }

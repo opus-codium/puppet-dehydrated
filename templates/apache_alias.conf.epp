@@ -1,0 +1,5 @@
+Alias /.well-known/acme-challenge/ "<%= $dehydrated::etcdir %>/.acme-challenges/"
+
+<Directory <%= $dehydrated::etcdir %>/.acme-challenges>
+    Require all granted
+</Directory>

@@ -137,8 +137,22 @@ Main class used to setup the system.
 
 * `apache_integration`: Specifies whether to setup apache to serve the generated challenges. Default: 'false'.
 * `cron_integration`: Specifies whether to setup cron to automatically renew certificates. Default: 'false'.
-* `private_key_renew`: Regenerate private keys instead of just signing new certificates on renewal. Default: 'yes'.
 * `user`: Specifies the user account used to manage certificates. Default: 'dehydrated'.
+
+* `$dehydrated::ipversion`: Resolve names to addresses of IP version only.
+* `$dehydrated::ca`: Path to certificate authority.
+* `$dehydrated::ca_terms`: Path to certificate authority license terms redirect.
+* `$dehydrated::license`: Path to license agreement.
+* `$dehydrated::challengetype`: Which challenge should be used?
+* `$dehydrated::keysize`: Default keysize for private keys.
+* `$dehydrated::openssl_cnf`: Path to openssl config file.
+* `$dehydrated::hook`: Program or function called in certain situations.
+* `$dehydrated::hook_chain`: Chain clean_challenge|deploy_challenge arguments together into one hook call per certificate.
+* `$dehydrated::renew_days`: Minimum days before expiration to automatically renew certificate.
+* `$dehydrated::private_key_renew`: Regenerate private keys instead of just signing new certificates on renewal. Default: 'yes'.
+* `$dehydrated::private_key_rollover`: Create an extra private key for rollover.
+* `$dehydrated::key_algo`: Which public key algorithm should be used?
+* `$dehydrated::ocsp_must_staple`: Option to add CSR-flag indicating OCSP stapling to be mandatory.
 
 #### Defined Type: `dehydrated::certificate`
 

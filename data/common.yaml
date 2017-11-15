@@ -1,4 +1,3 @@
 ---
 dehydrated::user: 'dehydrated'
 dehydrated::group: 'dehydrated'
-dehydrated::config: 'config'

@@ -6,7 +6,20 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 ### Added
-- `$dehydrated::private_key_renew` parameter.
+- `$dehydrated::ipversion` parameter,
+- `$dehydrated::ca` parameter,
+- `$dehydrated::ca_terms` parameter,
+- `$dehydrated::license` parameter,
+- `$dehydrated::challengetype` parameter,
+- `$dehydrated::keysize` parameter,
+- `$dehydrated::openssl_cnf` parameter,
+- `$dehydrated::hook` parameter,
+- `$dehydrated::hook_chain` parameter,
+- `$dehydrated::renew_days` parameter,
+- `$dehydrated::private_key_renew` parameter,
+- `$dehydrated::private_key_rollover` parameter,
+- `$dehydrated::key_algo` parameter,
+- `$dehydrated::ocsp_must_staple` parameter.
 
 ### Changed
 - Modernize code base.

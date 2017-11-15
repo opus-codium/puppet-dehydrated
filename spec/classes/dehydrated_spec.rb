@@ -31,14 +31,14 @@ describe 'dehydrated' do
       let(:private_key_renew) { true }
 
       it do
-        is_expected.to contain_file('/usr/local/etc/dehydrated/config').with_content(/^PRIVATE_KEY_RENEW="yes"/)
+        is_expected.to contain_file('/usr/local/etc/dehydrated/config').with_content(/^PRIVATE_KEY_RENEW='yes'$/)
       end
     end
     context('false') do
       let(:private_key_renew) { false }
 
       it do
-        is_expected.to contain_file('/usr/local/etc/dehydrated/config').with_content(/^PRIVATE_KEY_RENEW="no"/)
+        is_expected.to contain_file('/usr/local/etc/dehydrated/config').with_content(/^PRIVATE_KEY_RENEW='no'$/)
       end
     end
   end

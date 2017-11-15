@@ -1,7 +1,7 @@
 class dehydrated::config {
   include dehydrated
 
-  file { "${dehydrated::etcdir}/${dehydrated::config}":
+  file { "${dehydrated::etcdir}/config":
     ensure  => present,
     owner   => $dehydrated::user,
     group   => $dehydrated::user,
