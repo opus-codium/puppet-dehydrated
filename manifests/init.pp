@@ -7,8 +7,6 @@ class dehydrated (
   String                      $etcdir,
   String                      $group,
   Optional[String]            $package,
-  String                      $previous_etcdir,
-  String                      $previous_user,
   String                      $user,
 
   Boolean                     $apache_integration = false,

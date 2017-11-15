@@ -2,5 +2,4 @@
 dehydrated::apache_user: 'www'
 dehydrated::bin: '/usr/local/bin/dehydrated'
 dehydrated::etcdir: '/usr/local/etc/dehydrated'
-dehydrated::previous_etcdir: '/usr/local/etc/letsencrypt'
 dehydrated::package: 'dehydrated'

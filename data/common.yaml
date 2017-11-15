@@ -1,5 +1,4 @@
 ---
 dehydrated::user: 'dehydrated'
 dehydrated::group: 'dehydrated'
-dehydrated::previous_user: 'letsencrypt'
 dehydrated::config: 'config'

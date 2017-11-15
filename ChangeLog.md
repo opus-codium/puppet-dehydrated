@@ -11,6 +11,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Changed
 - Modernize code base.
 
+### Removed
+- letsencrypt.sh to dehydrated migration support.
+
 ## [1.1.0] - 2017-07-21
 ### Changed
 - Install dehydrated 0.4.0 on Debian.
