@@ -1,5 +1,7 @@
 # dehydrated
 
+[![Build Status](https://travis-ci.org/opus-codium/puppet-dehydrated.svg?branch=master)](https://travis-ci.org/opus-codium/puppet-dehydrated)
+
 #### Table of Contents
 
 1. [Module Description - What the module does and why it is useful](#module-description)
