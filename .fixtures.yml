@@ -1,5 +1,6 @@
 fixtures:
   repositories:
+    apache: "https://github.com/puppetlabs/puppetlabs-apache"
     concat: "https://github.com/puppetlabs/puppetlabs-concat"
     stdlib: "https://github.com/puppetlabs/puppetlabs-stdlib"
   symlinks:

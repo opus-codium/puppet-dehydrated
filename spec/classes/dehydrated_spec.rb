@@ -1,8 +1,6 @@
 require 'spec_helper'
 
 describe 'dehydrated' do
-  let(:title) { 'example.com' }
-
   let(:facts) do
     {
       'os' => {
@@ -13,7 +11,7 @@ describe 'dehydrated' do
 
   let(:params) do
     {
-      'contact_email' => 'user@example.com',
+      'contact_email' => 'bob@example.com',
       'private_key_renew' => private_key_renew,
     }
   end
