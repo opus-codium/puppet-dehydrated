@@ -1,13 +1,9 @@
 require 'spec_helper'
 
 describe 'dehydrated' do
-  let(:facts) do
-    {
-      'os' => {
-        'family' => 'FreeBSD',
-      }
-    }
-  end
+  on_supported_os(supported_os: ['FreeBSD']).each do |os, facts|
+    context "on #{os}" do
+  let(:facts) { facts }
 
   let(:params) do
     {
@@ -38,6 +34,8 @@ describe 'dehydrated' do
       it do
         is_expected.to contain_file('/usr/local/etc/dehydrated/config').with_content(/^PRIVATE_KEY_RENEW='no'$/)
       end
+    end
+  end
     end
   end
 end

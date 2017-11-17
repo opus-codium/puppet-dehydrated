@@ -3,5 +3,6 @@ fixtures:
     apache: "https://github.com/puppetlabs/puppetlabs-apache"
     concat: "https://github.com/puppetlabs/puppetlabs-concat"
     stdlib: "https://github.com/puppetlabs/puppetlabs-stdlib"
+    vcsrepo: "https://github.com/puppetlabs/puppetlabs-vcsrepo"
   symlinks:
     dehydrated: "#{source_dir}"

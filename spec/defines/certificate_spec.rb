@@ -1,15 +1,11 @@
 require 'spec_helper'
 
 describe 'dehydrated::certificate' do
+  on_supported_os.each do |os, facts|
+    context "on #{os}" do
   let(:title) { 'example.com' }
 
-  let(:facts) do
-    {
-      'os' => {
-        'family' => 'FreeBSD',
-      }
-    }
-  end
+  let(:facts) { facts }
 
   let(:params) do
     {
@@ -25,5 +21,7 @@ describe 'dehydrated::certificate' do
     let(:domains) { ['www.example.com', 'example.net', 'login.example.net'] }
 
     it { is_expected.to compile.with_all_deps }
+  end
+    end
   end
 end
