@@ -1,0 +1,48 @@
+# Managed by Puppet
+
+<% unless $dehydrated::ip_version =~ Undef { -%>
+IP_VERSION=<%= String($dehydrated::ip_version, '%p') %>
+<% } -%>
+<% unless $dehydrated::ca =~ Undef { -%>
+CA=<%= String($dehydrated::ca, '%p') %>
+<% } -%>
+<% unless $dehydrated::ca_terms =~ Undef { -%>
+CA_TERMS=<%= String($dehydrated::ca_terms, '%p') %>
+<% } -%>
+<% unless $dehydrated::license =~ Undef { -%>
+LICENSE=<%= String($dehydrated::license, '%p') %>
+<% } -%>
+<% unless $dehydrated::challengetype =~ Undef { -%>
+CHALLENGETYPE=<%= String($dehydrated::challengetype, '%p') %>
+<% } -%>
+WELLKNOWN='<%= $dehydrated::etcdir %>/.acme-challenges'
+<% unless $dehydrated::keysize =~ Undef { -%>
+KEYSIZE=<%= String($dehydrated::keysize, '%p') %>
+<% } -%>
+<% unless $dehydrated::openssl_cnf =~ Undef { -%>
+OPENSSL_CNF=<%= String($dehydrated::openssl_cnf, '%p') %>
+<% } -%>
+<% unless $dehydrated::hook =~ Undef { -%>
+HOOK=<%= String($dehydrated::hook, '%p') %>
+<% } -%>
+<% unless $dehydrated::hook_chain =~ Undef { -%>
+HOOK_CHAIN='<%= bool2str($dehydrated::hook_chain, 'yes', 'no') %>'
+<% } -%>
+<% unless $dehydrated::renew_days =~ Undef { -%>
+RENEW_DAYS=<%= String($dehydrated::renew_days, '%p') %>
+<% } -%>
+<% unless $dehydrated::private_key_renew =~ Undef { -%>
+PRIVATE_KEY_RENEW='<%= bool2str($dehydrated::private_key_renew, 'yes', 'no') %>'
+<% } -%>
+<% unless $dehydrated::private_key_rollover =~ Undef { -%>
+PRIVATE_KEY_ROLLOVER='<%= bool2str($dehydrated::private_key_rollover, 'yes', 'no') %>'
+<% } -%>
+<% unless $dehydrated::key_algo =~ Undef { -%>
+KEY_ALGO=<%= String($dehydrated::key_algo, '%p') %>
+<% } -%>
+<% unless $dehydrated::contact_email =~ Undef { -%>
+CONTACT_EMAIL=<%= String($dehydrated::contact_email, '%p') %>
+<% } -%>
+<% unless $dehydrated::ocsp_must_staple =~ Undef { -%>
+OCSP_MUST_STAPLE='<%= bool2str($dehydrated::ocsp_must_staple, 'yes', 'no') %>'
+<% } -%>

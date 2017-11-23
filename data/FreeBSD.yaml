@@ -1,0 +1,5 @@
+---
+dehydrated::apache_user: 'www'
+dehydrated::bin: '/usr/local/bin/dehydrated'
+dehydrated::etcdir: '/usr/local/etc/dehydrated'
+dehydrated::package: 'dehydrated'

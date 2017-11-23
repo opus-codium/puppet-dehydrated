@@ -1,7 +1,7 @@
 define dehydrated::certificate (
-  $domains = [],
+  Array[String] $domains = [],
 ) {
-  include ::dehydrated
+  include dehydrated
 
   concat::fragment { "${dehydrated::etcdir}/domains.txt-${name}":
     target  => "${dehydrated::etcdir}/domains.txt",
@@ -12,13 +12,13 @@ define dehydrated::certificate (
   # This exec statement serve as a proxy to determine if this command should be
   # run for this certificate and only then notify the changed exec statement.
   exec { "dehydrated-${name}":
-    command => 'true',
+    command => 'true',                   # lint:ignore:quoted_booleans
     unless  => "test -r ${dehydrated::etcdir}/certs/${name}/cert.pem",
     path    => '/bin:/usr/bin',
     user    => $dehydrated::user,
   }
 
-  Class['Dehydrated::Domains'] ->
-  Exec["dehydrated-${name}"] ~>
-  Class['Dehydrated::Changed']
+  Class['Dehydrated::Domains']
+  -> Exec["dehydrated-${name}"]
+  ~> Class['Dehydrated::Changed']
 }

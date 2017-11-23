@@ -1,5 +1,5 @@
 class dehydrated::domains {
-  include ::dehydrated
+  include dehydrated
 
   concat { "${dehydrated::etcdir}/domains.txt":
     ensure => present,

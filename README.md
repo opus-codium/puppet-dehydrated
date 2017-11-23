@@ -1,5 +1,7 @@
 # dehydrated
 
+[![Build Status](https://travis-ci.org/opus-codium/puppet-dehydrated.svg?branch=master)](https://travis-ci.org/opus-codium/puppet-dehydrated)
+
 #### Table of Contents
 
 1. [Module Description - What the module does and why it is useful](#module-description)
@@ -10,7 +12,6 @@
     * [Generate a certificate with SAN](#generate-a-certificate-with-san)
     * [Renewing certificates with cron](#renewing-certificates-with-cron)
     * [Serving challenges with Apache](#serving-challenges-with-apache)
-    * [Handling the letsencrypt\_sh to dehydrated transition](#handling-the-letsencryptsh-to-dehydrated-transition)
 4. [Reference - An under-the-hood peek at what the module is doing and how](#reference)
     * [Classes](#classes)
     * [Defined Types](#defined-types)
@@ -112,17 +113,6 @@ apache::vhost { 'main':
 }
 ```
 
-### Handling the *letsencrypt.sh* to *dehydrated* transition
-
-Because of a violation of Let's Encrypts trademark policy (i.e. « If you do something better than us, please do not use our name: this would confuse our users who prefer to have our inefficient code and may use your efficient one without knowing »), the *letsencrypt\_sh* project was renamed to *dehydrated*.  This Puppet module was originally named *puppet-letsencrypt\_sh* for consistency, and also for consistency, has been renamed to *puppet-dehydrated*.  If you used the previous module, here is how to migrate!
-
-1. Update your repository to get the latest code of this modules (e.g. through r10k), and change the module name in your manifest.  For now, **do not** change the certificates path;
-2. Apply your new catalog (old data will be moved, appropriate user accounts will be created or removed, and a symlink will make everything accessible as previously);
-3. Update your Puppet configuration for the certificates to be found in their new location;
-4. Apply your updated catalog once more.
-
-The symlink is not needed anymore, but is not handled by the module.  You can remove it if you wish.
-
 ## Reference
 
 ### Classes
@@ -148,6 +138,21 @@ Main class used to setup the system.
 * `apache_integration`: Specifies whether to setup apache to serve the generated challenges. Default: 'false'.
 * `cron_integration`: Specifies whether to setup cron to automatically renew certificates. Default: 'false'.
 * `user`: Specifies the user account used to manage certificates. Default: 'dehydrated'.
+
+* `$dehydrated::ipversion`: Resolve names to addresses of IP version only.
+* `$dehydrated::ca`: Path to certificate authority.
+* `$dehydrated::ca_terms`: Path to certificate authority license terms redirect.
+* `$dehydrated::license`: Path to license agreement.
+* `$dehydrated::challengetype`: Which challenge should be used?
+* `$dehydrated::keysize`: Default keysize for private keys.
+* `$dehydrated::openssl_cnf`: Path to openssl config file.
+* `$dehydrated::hook`: Program or function called in certain situations.
+* `$dehydrated::hook_chain`: Chain clean_challenge|deploy_challenge arguments together into one hook call per certificate.
+* `$dehydrated::renew_days`: Minimum days before expiration to automatically renew certificate.
+* `$dehydrated::private_key_renew`: Regenerate private keys instead of just signing new certificates on renewal. Default: 'yes'.
+* `$dehydrated::private_key_rollover`: Create an extra private key for rollover.
+* `$dehydrated::key_algo`: Which public key algorithm should be used?
+* `$dehydrated::ocsp_must_staple`: Option to add CSR-flag indicating OCSP stapling to be mandatory.
 
 #### Defined Type: `dehydrated::certificate`
 

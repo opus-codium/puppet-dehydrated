@@ -1,0 +1,38 @@
+{
+  "name": "opuscodium-dehydrated",
+  "version": "1.2.0",
+  "author": "Opus-Codium",
+  "summary": "dehydrated puppet module",
+  "license": "MIT",
+  "source": "https://github.com/opus-codium/puppet-dehydrated",
+  "project_page": "https://github.com/opus-codium/puppet-dehydrated",
+  "issues_url": "https://github.com/opus-codium/puppet-dehydrated/pulls",
+  "dependencies": [
+    { "name": "puppetlabs/concat", "version_requirement": ">= 2.1.0 < 5.0.0" },
+    { "name": "puppetlabs/stdlib", "version_requirement": ">= 4.13.1 < 5.0.0" }
+  ],
+  "data_provider": "hiera",
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "Debian",
+      "operatingsystemrelease": [
+        "8",
+        "9"
+      ]
+    },
+    {
+      "operatingsystem": "FreeBSD",
+      "operatingsystemrelease": [
+        "10.0-STABLE",
+        "11.0-STABLE"
+      ]
+    }
+  ],
+  "requirements": [
+    {
+      "name": "puppet",
+      "version_requirement": ">= 4.8.0 < 6.0.0"
+    }
+  ],
+  "description": "The dehydrated module lets you use Puppet to manage Let's Encrypt certificates creation and renewal using dehydrated."
+}

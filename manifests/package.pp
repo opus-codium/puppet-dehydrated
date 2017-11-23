@@ -1,5 +1,5 @@
 class dehydrated::package {
-  include ::dehydrated
+  include dehydrated
 
   package { $dehydrated::package:
     ensure => installed,
