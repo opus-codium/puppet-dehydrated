@@ -14,4 +14,6 @@ class dehydrated::config {
     group  => $dehydrated::user,
     mode   => '0755',
   }
+
+  ensure_packages($dehydrated::dependencies, { ensure => 'present' })
 }
