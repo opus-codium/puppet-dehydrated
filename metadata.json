@@ -23,8 +23,8 @@
     {
       "operatingsystem": "FreeBSD",
       "operatingsystemrelease": [
-        "10.0-STABLE",
-        "11.0-STABLE"
+        "10",
+        "11"
       ]
     }
   ],

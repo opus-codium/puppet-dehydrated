@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe 'dehydrated' do
-  on_supported_os(supported_os: ['FreeBSD']).each do |os, facts|
+  on_supported_os.each do |os, facts|
     context "on #{os}" do
       let(:facts) { facts }
 
@@ -16,6 +16,8 @@ describe 'dehydrated' do
 
       it { is_expected.to compile.with_all_deps }
 
+      case facts[:osfamily]
+      when 'FreeBSD'
       it do
         is_expected.to contain_file('/usr/local/etc/dehydrated/config').without_content(/^PRIVATE_KEY_RENEW=/)
       end
@@ -35,6 +37,7 @@ describe 'dehydrated' do
             is_expected.to contain_file('/usr/local/etc/dehydrated/config').with_content(/^PRIVATE_KEY_RENEW='no'$/)
           end
         end
+      end
       end
     end
   end
