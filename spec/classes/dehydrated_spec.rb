@@ -7,7 +7,7 @@ describe 'dehydrated' do
 
       let(:params) do
         {
-          'contact_email' => 'bob@example.com',
+          'contact_email'     => 'bob@example.com',
           'private_key_renew' => private_key_renew,
         }
       end
@@ -22,7 +22,7 @@ describe 'dehydrated' do
         is_expected.to contain_file('/usr/local/etc/dehydrated/config').without_content(/^PRIVATE_KEY_RENEW=/)
       end
 
-      context('with XXX set') do
+      context('private_key_renew') do
         context('true') do
           let(:private_key_renew) { true }
 
