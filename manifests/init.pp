@@ -6,6 +6,8 @@ class dehydrated (
   Optional[String]            $package,
   String                      $user,
 
+  Array[String]               $dependencies = [],
+
   Boolean                     $apache_integration = false,
   Boolean                     $cron_integration   = false,
 
