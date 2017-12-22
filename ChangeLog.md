@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [2.0.0]
 ### Added
 - `$dehydrated::ipversion` parameter,
 - `$dehydrated::ca` parameter,
@@ -22,7 +22,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `$dehydrated::ocsp_must_staple` parameter.
 
 ### Changed
-- Modernize code base.
+- Modernize code base,
+- Install curl on Debian hosts.
 
 ### Removed
 - letsencrypt.sh to dehydrated migration support.
