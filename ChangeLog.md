@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Changed
 - Allow end-user to customize dehydrated source when using a repo,
 - Allow end-user to customize dehydrated version when using a repo,
+- Default to the latests dehydrated release (v0.5.0) when using repo.
 
 ## [2.0.0]
 ### Added
