@@ -2,6 +2,7 @@ class dehydrated::apache {
   include dehydrated
 
   include apache
+  include apache::mod::alias
 
   apache::custom_config { 'dehydrated':
     ensure  => present,
