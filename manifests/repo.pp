@@ -4,8 +4,8 @@ class dehydrated::repo {
   vcsrepo { $dehydrated::etcdir:
     ensure   => present,
     provider => 'git',
-    source   => 'https://github.com/lukas2511/dehydrated.git',
-    revision => 'v0.4.0',
+    source   => $dehydrated::repo_source,
+    revision => $dehydrated::repo_revision,
     user     => $dehydrated::user,
   }
 }

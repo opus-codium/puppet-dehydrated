@@ -5,6 +5,8 @@ class dehydrated (
   String                      $group,
   Optional[String]            $package,
   String                      $user,
+  String                      $repo_source,
+  String                      $repo_revision,
 
   Array[String]               $dependencies = [],
 

@@ -4,10 +4,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-
 ## [Unreleased]
 ### Changed
 - Added missing dependency on `apache::mod::alias`.
+- Allow end-user to customize dehydrated source when using a repo,
+- Allow end-user to customize dehydrated version when using a repo,
+- Default to the latests dehydrated release (v0.5.0) when using repo.
 
 ## [2.0.0]
 ### Added
