@@ -1,11 +1,17 @@
 source 'https://rubygems.org'
 
-puppetversion = ENV.key?('PUPPET_VERSION') ? ENV['PUPPET_VERSION'] : '>= 4.10'
+group :test do
+  gem 'facter', (ENV['FACTER_GEM_VERSION'] || '~> 2.0'),           require: false
+  gem 'puppet-lint-classes_and_types_beginning_with_digits-check', require: false
+  gem 'puppet-lint-leading_zero-check',                            require: false
+  gem 'puppet-lint-trailing_comma-check',                          require: false
+  gem 'puppet-lint-unquoted_string-check',                         require: false
+  gem 'puppet-lint-variable_contains_upcase',                      require: false
+  gem 'puppet-lint-version_comparison-check',                      require: false
+  gem 'puppetlabs_spec_helper',                                    require: false
+  gem 'rspec-puppet-facts',                                        require: false
+  gem 'rubocop',                                                   require: false
+end
 
-gem 'facter', '>= 1.7.0'
-gem 'metadata-json-lint'
+puppetversion = ENV['PUPPET_VERSION'] || '~> 5.0'
 gem 'puppet', puppetversion
-gem 'puppet-lint', '>= 0.3.2'
-gem 'puppetlabs_spec_helper', '>= 0.1.0'
-gem 'rspec-puppet-facts'
-gem 'semantic_puppet'
