@@ -20,26 +20,26 @@ describe 'dehydrated' do
       when 'Debian'
         it { is_expected.to contain_package('curl').with(ensure: 'present') }
       when 'FreeBSD'
-      it do
-        is_expected.to contain_file('/usr/local/etc/dehydrated/config').without_content(/^PRIVATE_KEY_RENEW=/)
-      end
+        it do
+          is_expected.to contain_file('/usr/local/etc/dehydrated/config').without_content(/^PRIVATE_KEY_RENEW=/)
+        end
 
-      context('private_key_renew') do
-        context('true') do
-          let(:private_key_renew) { true }
+        context('private_key_renew') do
+          context('true') do
+            let(:private_key_renew) { true }
 
-          it do
-            is_expected.to contain_file('/usr/local/etc/dehydrated/config').with_content(/^PRIVATE_KEY_RENEW='yes'$/)
+            it do
+              is_expected.to contain_file('/usr/local/etc/dehydrated/config').with_content(/^PRIVATE_KEY_RENEW='yes'$/)
+            end
+          end
+          context('false') do
+            let(:private_key_renew) { false }
+
+            it do
+              is_expected.to contain_file('/usr/local/etc/dehydrated/config').with_content(/^PRIVATE_KEY_RENEW='no'$/)
+            end
           end
         end
-        context('false') do
-          let(:private_key_renew) { false }
-
-          it do
-            is_expected.to contain_file('/usr/local/etc/dehydrated/config').with_content(/^PRIVATE_KEY_RENEW='no'$/)
-          end
-        end
-      end
       end
     end
   end
