@@ -1,6 +1,6 @@
 ---
 language: "ruby"
-script: "bundle exec rake validate lint spec"
+script: "bundle exec rake rubocop validate lint spec"
 rvm:
   - 2.3
   - 2.4
