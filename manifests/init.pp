@@ -28,6 +28,7 @@ class dehydrated (
   Optional[Enum['rsa', 'prime256v1', 'secp384r1']] $key_algo             = undef,
   String                                           $contact_email, # lint:ignore:parameter_order
   Optional[Boolean]                                $ocsp_must_staple     = undef,
+  Optional[Integer[0]]                             $timeout              = undef,
 ) {
 
   include dehydrated::user
