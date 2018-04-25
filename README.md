@@ -67,6 +67,28 @@ dehydrated::certificate { 'example.com':
 }
 ```
 
+### Use DNS-01 hook
+
+Examples of dns-01 `hook.sh`:
+* [nsupdate](https://github.com/lukas2511/dehydrated/blob/master/docs/examples/hook.sh)
+* [more](https://github.com/lukas2511/dehydrated/wiki/Examples-for-DNS-01-hooks)
+
+**Hook must wait until DNS records are really synced across public DNS servers and only
+then finish. Otherwise Let's Encrypt won't find the records from their side and dehydrated
+run will fail.**
+
+```puppet
+class { 'dehydrated':
+  contact_email => 'user@example.com',
+  challengetype => 'dns-01',
+  hook          => '/home/dehydrated/hook.sh',
+  timeout       => 600,
+}
+
+dehydrated::certificate { 'example.com':
+}
+```
+
 ### Renewing certificates with cron
 
 The `cron_integration` parameter of the `dehydrated` class configures cron to renew certificates before they expire.
@@ -153,6 +175,7 @@ Main class used to setup the system.
 * `private_key_rollover`: Create an extra private key for rollover.
 * `key_algo`: Which public key algorithm should be used?
 * `ocsp_must_staple`: Option to add CSR-flag indicating OCSP stapling to be mandatory.
+* `timeout`: Execution timeout for dehydrated tool. Default: '300'.
 
 #### Defined Type: `dehydrated::certificate`
 

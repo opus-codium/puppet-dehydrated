@@ -5,6 +5,7 @@ class dehydrated::changed {
     refreshonly => true,
     path        => '/bin:/usr/bin:/usr/local/bin',
     user        => $dehydrated::user,
+    timeout     => $dehydrated::timeout,
   }
 
   if $dehydrated::apache_integration {
