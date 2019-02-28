@@ -1,6 +1,6 @@
 # dehydrated
 
-[![Build Status](https://travis-ci.org/opus-codium/puppet-dehydrated.svg?branch=master)](https://travis-ci.org/opus-codium/puppet-dehydrated)
+[![Build Status](https://travis-ci.com/opus-codium/puppet-dehydrated.svg?branch=master)](https://travis-ci.com/opus-codium/puppet-dehydrated)
 
 #### Table of Contents
 
