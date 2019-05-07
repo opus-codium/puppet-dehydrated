@@ -1,0 +1,6 @@
+---
+dehydrated::apache_user: 'www-data'
+dehydrated::bin: '/home/dehydrated/dehydrated'
+dehydrated::dependencies: ['curl']
+dehydrated::etcdir: '/home/dehydrated'
+dehydrated::package: ~
