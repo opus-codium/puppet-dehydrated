@@ -1,3 +1,4 @@
+# @summary Serve challenges with Apache
 class dehydrated::apache {
   include dehydrated
 

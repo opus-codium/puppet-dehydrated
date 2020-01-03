@@ -1,3 +1,32 @@
+# @summary Manage dehydrated
+#
+# @param apache_user
+# @param bin
+# @param etcdir
+# @param group
+# @param package
+# @param user
+# @param repo_source
+# @param repo_revision
+# @param dependencies
+# @param apache_integration
+# @param cron_integration
+# @param ip_version
+# @param ca
+# @param ca_terms
+# @param license
+# @param challengetype
+# @param keysize
+# @param openssl_cnf
+# @param hook
+# @param hook_chain
+# @param renew_days
+# @param private_key_renew
+# @param private_key_rollover
+# @param key_algo
+# @param contact_email
+# @param ocsp_must_staple
+# @param timeout
 class dehydrated (
   String                      $apache_user,
   String                      $bin,

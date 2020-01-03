@@ -1,3 +1,4 @@
+# @summary Manage the dehydrated package
 class dehydrated::package {
   include dehydrated
 

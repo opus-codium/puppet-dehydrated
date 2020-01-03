@@ -1,3 +1,4 @@
+# @summary Trigger a refresh of the certificates
 class dehydrated::changed {
   include dehydrated
 
