@@ -1,3 +1,4 @@
+# @summary Manage cron task to refresh certificates
 class dehydrated::cron {
   include dehydrated
 

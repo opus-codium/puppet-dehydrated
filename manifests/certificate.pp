@@ -1,3 +1,6 @@
+# @summary Add a certificate to manage
+#
+# @param domains List of Subject Alternative Names to include in the certificate
 define dehydrated::certificate (
   Array[String] $domains = [],
 ) {

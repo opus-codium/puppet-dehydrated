@@ -1,3 +1,4 @@
+# @summary Manage the domains.txt file
 class dehydrated::domains {
   include dehydrated
 

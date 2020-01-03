@@ -1,3 +1,4 @@
+# @summary Manage dehydrated configuration
 class dehydrated::config {
   include dehydrated
 

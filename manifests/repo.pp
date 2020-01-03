@@ -1,3 +1,4 @@
+# @summary Manage the dehydrated code
 class dehydrated::repo {
   include dehydrated
 

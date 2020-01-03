@@ -1,3 +1,4 @@
+# @summary Manage the dehydrated user
 class dehydrated::user {
   include dehydrated
 
