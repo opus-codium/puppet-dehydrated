@@ -15,7 +15,7 @@ class dehydrated::cron {
       }
       cron { 'weekly_dehydrated':
         ensure  => $ensure,
-        command => "${dehydrated::bin} --accept-terms -c",
+        command => "${dehydrated::bin} --accept-terms --cron",
         user    => $dehydrated::user,
         weekday => 0,
         hour    => 3,
