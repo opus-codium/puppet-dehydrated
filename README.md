@@ -4,17 +4,28 @@
 
 #### Table of Contents
 
-1. [Module Description - What the module does and why it is useful](#module-description)
-2. [Setup - The basics of getting started with dehydrated](#setup)
-    * [Beginning with dehydrated](#beginning-with-dehydrated)
-3. [Usage - Configuration options and additional functionality](#usage)
-    * [Generate a simple certificate](#generate-a-simple-certificate)
-    * [Generate a certificate with SAN](#generate-a-certificate-with-san)
-    * [Renewing certificates with cron](#renewing-certificates-with-cron)
-    * [Serving challenges with Apache](#serving-challenges-with-apache)
-4. [Reference - An under-the-hood peek at what the module is doing and how](#reference)
-    * [Classes](#classes)
-    * [Defined Types](#defined-types)
+<!-- vim-markdown-toc GFM -->
+
+* [Module Description](#module-description)
+* [Setup](#setup)
+  * [Beginning with dehydrated](#beginning-with-dehydrated)
+* [Usage](#usage)
+  * [Generate a simple certificate](#generate-a-simple-certificate)
+  * [Generate a certificate with SAN](#generate-a-certificate-with-san)
+  * [Use DNS-01 hook](#use-dns-01-hook)
+  * [Renewing certificates with cron](#renewing-certificates-with-cron)
+  * [Serving challenges with Apache](#serving-challenges-with-apache)
+* [Reference](#reference)
+  * [Classes](#classes)
+    * [Public Classes](#public-classes)
+    * [Class: `dehydrated`](#class-dehydrated)
+      * [Required parameters](#required-parameters)
+      * [Optional parameters](#optional-parameters)
+  * [Defined Types](#defined-types)
+    * [Defined Type: `dehydrated::certificate`](#defined-type-dehydratedcertificate)
+      * [Parameters (all optional)](#parameters-all-optional)
+
+<!-- vim-markdown-toc -->
 
 ## Module Description
 
@@ -141,12 +152,6 @@ apache::vhost { 'main':
 
 #### Public Classes
 
-* [`dehydrated`](#class-dehydrated)
-
-### Defined Types
-
-* [`dehydrated::certificate`](#defined-type-dehydratedcertificate)
-
 #### Class: `dehydrated`
 
 Main class used to setup the system.
@@ -176,6 +181,8 @@ Main class used to setup the system.
 * `key_algo`: Which public key algorithm should be used?
 * `ocsp_must_staple`: Option to add CSR-flag indicating OCSP stapling to be mandatory.
 * `timeout`: Execution timeout for dehydrated tool. Default: '300'.
+
+### Defined Types
 
 #### Defined Type: `dehydrated::certificate`
 
