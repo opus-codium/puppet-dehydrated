@@ -1,6 +1,6 @@
 # @summary Manage the domains.txt file
 class dehydrated::domains {
-  include dehydrated
+  assert_private()
 
   concat { "${dehydrated::etcdir}/domains.txt":
     ensure => present,

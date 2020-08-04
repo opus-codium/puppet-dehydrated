@@ -1,6 +1,6 @@
 # @summary Manage cron task to refresh certificates
 class dehydrated::cron {
-  include dehydrated
+  assert_private()
 
   if $dehydrated::cron_integration {
     $ensure = 'present'

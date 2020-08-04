@@ -1,6 +1,6 @@
 # @summary Manage the dehydrated package
 class dehydrated::package {
-  include dehydrated
+  assert_private()
 
   package { $dehydrated::package:
     ensure => installed,

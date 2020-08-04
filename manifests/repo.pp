@@ -1,6 +1,6 @@
 # @summary Manage the dehydrated code
 class dehydrated::repo {
-  include dehydrated
+  assert_private()
 
   vcsrepo { $dehydrated::etcdir:
     ensure   => present,
