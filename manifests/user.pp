@@ -1,6 +1,6 @@
 # @summary Manage the dehydrated user
 class dehydrated::user {
-  include dehydrated
+  assert_private()
 
   user { $dehydrated::user:
     ensure     => present,

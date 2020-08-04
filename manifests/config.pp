@@ -1,6 +1,6 @@
 # @summary Manage dehydrated configuration
 class dehydrated::config {
-  include dehydrated
+  assert_private()
 
   file { "${dehydrated::etcdir}/config":
     ensure  => present,

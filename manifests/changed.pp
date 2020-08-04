@@ -1,6 +1,6 @@
 # @summary Trigger a refresh of the certificates
 class dehydrated::changed {
-  include dehydrated
+  assert_private()
 
   exec { "${dehydrated::bin} --accept-terms -c":
     refreshonly => true,
