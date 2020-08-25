@@ -191,3 +191,57 @@ Class used to describe the certificates that should be maintained.
 ##### Parameters (all optional)
 
 * `domains`: Specifies the list of domains to include as SAN (Subject Alternative Names).
+
+### Functions
+
+#### Function: `dehydrated::ssl_cert_file`
+
+Function used to provide the `ssl_cert_file` path.
+
+##### Required parameters
+
+* `hostname`: Hostname
+
+#### Function: `dehydrated::ssl_privkey_file`
+
+Function used to provide the `ssl_privkey_file` path.
+
+##### Required parameters
+
+* `hostname`: Hostname
+
+#### Function: `dehydrated::ssl_chain_file`
+
+Function used to provide the `ssl_chain_file` path.
+
+##### Required parameters
+
+* `hostname`: Hostname
+
+#### Function: `dehydrated::ssl_fullchain_file`
+
+Function used to provide the `ssl_fullchain_file` path.
+
+##### Required parameters
+
+* `hostname`: Hostname
+
+#### Function: `dehydrated::apache::vhost_attributes`
+
+Function used to provide the SSL attributes for `apache::vhost` defined type.
+It returns a hash with `ssl_cert`, `ssl_key` and `ssl_chain` keys.
+
+This function is designed to be used as hash attributes using splat operator, ie.:
+
+```puppet
+apache::vhost { $hostname:
+  port => 443,
+  ssl  => true,
+  [...]
+  *    => dehydrated::apache::vhost_attributes($hostname)
+}
+```
+
+##### Required parameters
+
+* `hostname`: Hostname
