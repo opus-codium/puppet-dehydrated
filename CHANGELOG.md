@@ -4,7 +4,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [2.3.0]
+- Add documention for classes and defined types
+- Add task and plan to renew certificates
+- Make internal classes private
+- Implement helper functions to retrieve ssl paths (ie. `dehydrated::ssl_*_file`)
+- Add a `dehydrated::apache::vhost_attributes` function to ease `apache::vhost` usage with `dehydrated`
+
 ### Changed
 - Keep going on certificate failure.
 
