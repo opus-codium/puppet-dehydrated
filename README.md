@@ -24,6 +24,17 @@
   * [Defined Types](#defined-types)
     * [Defined Type: `dehydrated::certificate`](#defined-type-dehydratedcertificate)
       * [Parameters (all optional)](#parameters-all-optional)
+  * [Functions](#functions)
+    * [Function: `dehydrated::ssl_cert_file`](#function-dehydratedssl_cert_file)
+      * [Required parameters](#required-parameters-1)
+    * [Function: `dehydrated::ssl_privkey_file`](#function-dehydratedssl_privkey_file)
+      * [Required parameters](#required-parameters-2)
+    * [Function: `dehydrated::ssl_chain_file`](#function-dehydratedssl_chain_file)
+      * [Required parameters](#required-parameters-3)
+    * [Function: `dehydrated::ssl_fullchain_file`](#function-dehydratedssl_fullchain_file)
+      * [Required parameters](#required-parameters-4)
+    * [Function: `dehydrated::apache::vhost_attributes`](#function-dehydratedapachevhost_attributes)
+      * [Required parameters](#required-parameters-5)
 
 <!-- vim-markdown-toc -->
 
