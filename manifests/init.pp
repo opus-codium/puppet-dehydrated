@@ -59,8 +59,8 @@ class dehydrated (
   Optional[Boolean]                                $ocsp_must_staple     = undef,
   Optional[Integer[0]]                             $timeout              = undef,
 ) {
-
   include dehydrated::user
+
   if $package {
     include dehydrated::package
 

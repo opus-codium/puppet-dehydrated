@@ -3,7 +3,7 @@ class dehydrated::config {
   assert_private()
 
   file { "${dehydrated::etcdir}/config":
-    ensure  => present,
+    ensure  => file,
     owner   => $dehydrated::user,
     group   => $dehydrated::user,
     content => epp('dehydrated/config.epp'),
