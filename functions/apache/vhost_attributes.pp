@@ -6,7 +6,7 @@
 #   apache::vhost { $hostname:
 #     port => 443,
 #     ssl  => true,
-  #   [...]
+#     [...]
 #     *    => dehydrated::apache::vhost_attributes($hostname)
 #   }
 function dehydrated::apache::vhost_attributes(String $hostname) {
