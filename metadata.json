@@ -1,6 +1,6 @@
 {
   "name": "opuscodium-dehydrated",
-  "version": "2.3.0",
+  "version": "2.4.0",
   "author": "Opus Codium",
   "summary": "Manages Let's encrypt certificates using dehydrated",
   "license": "MIT",
@@ -8,8 +8,14 @@
   "project_page": "https://github.com/opus-codium/puppet-dehydrated",
   "issues_url": "https://github.com/opus-codium/puppet-dehydrated/issues",
   "dependencies": [
-    { "name": "puppetlabs/concat", "version_requirement": ">= 2.1.0 < 5.0.0" },
-    { "name": "puppetlabs/stdlib", "version_requirement": ">= 4.13.1 < 5.0.0" }
+    {
+      "name": "puppetlabs/concat",
+      "version_requirement": ">= 2.1.0 < 5.0.0"
+    },
+    {
+      "name": "puppetlabs/stdlib",
+      "version_requirement": ">= 4.13.1 < 5.0.0"
+    }
   ],
   "data_provider": "hiera",
   "operatingsystem_support": [
