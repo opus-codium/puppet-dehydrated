@@ -31,11 +31,12 @@ class dehydrated (
   String                      $apache_user,
   String                      $bin,
   String                      $etcdir,
-  String                      $group,
   Optional[String]            $package,
-  String                      $user,
-  String                      $repo_source,
-  String                      $repo_revision,
+
+  String                      $group         = 'dehydrated',
+  String                      $user          = 'dehydrated',
+  String                      $repo_source   = 'https://github.com/lukas2511/dehydrated.git',
+  String                      $repo_revision = 'v0.5.0',
 
   Array[String]               $dependencies = [],
 

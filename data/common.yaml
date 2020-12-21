@@ -1,6 +1,2 @@
 ---
 dehydrated::bin: '/home/dehydrated/dehydrated'
-dehydrated::user: 'dehydrated'
-dehydrated::group: 'dehydrated'
-dehydrated::repo_source: 'https://github.com/lukas2511/dehydrated.git'
-dehydrated::repo_revision: 'v0.5.0'
