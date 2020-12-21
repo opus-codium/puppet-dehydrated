@@ -35,8 +35,8 @@ class dehydrated (
 
   String                      $group         = 'dehydrated',
   String                      $user          = 'dehydrated',
-  String                      $repo_source   = 'https://github.com/lukas2511/dehydrated.git',
-  String                      $repo_revision = 'v0.5.0',
+  String                      $repo_source   = 'https://github.com/dehydrated-io/dehydrated.git',
+  String                      $repo_revision = 'v0.7.0',
 
   Array[String]               $dependencies = [],
 
