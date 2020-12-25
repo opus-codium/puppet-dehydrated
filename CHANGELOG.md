@@ -1,72 +1,82 @@
 # Changelog
+
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-## [2.3.0]
-### Added
-- Add documention for classes and defined types
-- Add task and plan to renew certificates
-- Make internal classes private
-- Implement helper functions to retrieve ssl paths (ie. `dehydrated::ssl_*_file`)
-- Add a `dehydrated::apache::vhost_attributes` function to ease `apache::vhost` usage with `dehydrated`
 
-### Changed
-- Keep going on certificate failure.
+## [2.4.1](https://github.com/opus-codium/puppet-dehydrated/tree/2.4.1) (2020-12-25)
 
-## [2.2.0]
-### Added
-- Support for RedHat based operating systems.
+[Full Changelog](https://github.com/opus-codium/puppet-dehydrated/compare/2.4.0...2.4.1)
 
-## [2.1.0]
-### Added
-- Added missing dependency on `apache::mod::alias`,
-- Allow end-user to customize dehydrated source when using a repo (`$dehydrated::repo_source`),
-- Allow end-user to customize dehydrated version when using a repo (`$dehydrated::repo_revision`),
-- Allow end-user to customize execution timeout (`$dehydrated::timeout`).
+**Fixed bugs:**
 
-### Changed
-- Default to the latests dehydrated release (v0.5.0) when using a repo.
+- Restore the previous dehydrated repository URL [\#28](https://github.com/opus-codium/puppet-dehydrated/pull/28) ([smortex](https://github.com/smortex))
 
-## [2.0.0]
-### Added
-- `$dehydrated::ipversion` parameter,
-- `$dehydrated::ca` parameter,
-- `$dehydrated::ca_terms` parameter,
-- `$dehydrated::license` parameter,
-- `$dehydrated::challengetype` parameter,
-- `$dehydrated::keysize` parameter,
-- `$dehydrated::openssl_cnf` parameter,
-- `$dehydrated::hook` parameter,
-- `$dehydrated::hook_chain` parameter,
-- `$dehydrated::renew_days` parameter,
-- `$dehydrated::private_key_renew` parameter,
-- `$dehydrated::private_key_rollover` parameter,
-- `$dehydrated::key_algo` parameter,
-- `$dehydrated::ocsp_must_staple` parameter.
+## [2.4.0](https://github.com/opus-codium/puppet-dehydrated/tree/2.4.0) (2020-12-21)
 
-### Changed
-- Modernize code base,
-- Install curl on Debian hosts.
+[Full Changelog](https://github.com/opus-codium/puppet-dehydrated/compare/2.3.0...2.4.0)
 
-### Removed
-- letsencrypt.sh to dehydrated migration support.
+**Implemented enhancements:**
 
-## [1.1.0] - 2017-07-21
-### Changed
-- Install dehydrated 0.4.0 on Debian.
+- Default to dehydrated 0.7.0 when installing from repos [\#26](https://github.com/opus-codium/puppet-dehydrated/pull/26) ([smortex](https://github.com/smortex))
+- Move common default values to init.pp [\#25](https://github.com/opus-codium/puppet-dehydrated/pull/25) ([smortex](https://github.com/smortex))
 
-## [1.0.1] - 2017-01-08
-### Fixed
-- Fix warning when `strict_variable` checking is set.
+## [2.3.0](https://github.com/opus-codium/puppet-dehydrated/tree/2.3.0) (2020-09-04)
 
-## [1.0.0] - 2017-01-08
-### Initial release
+[Full Changelog](https://github.com/opus-codium/puppet-dehydrated/compare/2.2.0...2.3.0)
 
-[Unreleased]: https://github.com/opus-codium/puppet-dehydrated/compare/2.2.0...master
-[2.2.0]: https://github.com/opus-codium/puppet-dehydrated/compare/2.1.0...2.2.0
-[2.1.0]: https://github.com/opus-codium/puppet-dehydrated/compare/2.0.0...2.1.0
-[2.0.0]: https://github.com/opus-codium/puppet-dehydrated/compare/1.1.0...2.0.0
-[1.1.0]: https://github.com/opus-codium/puppet-dehydrated/compare/1.0.1...1.1.0
-[1.0.1]: https://github.com/opus-codium/puppet-dehydrated/compare/1.0.0...1.0.1
+**Implemented enhancements:**
+
+- Implement helper functions to retrieve ssl paths [\#21](https://github.com/opus-codium/puppet-dehydrated/pull/21) ([neomilium](https://github.com/neomilium))
+- Make internal classes private [\#20](https://github.com/opus-codium/puppet-dehydrated/pull/20) ([smortex](https://github.com/smortex))
+- Add task and plan to renew certificates [\#16](https://github.com/opus-codium/puppet-dehydrated/pull/16) ([smortex](https://github.com/smortex))
+- Keep going on certificate creation/renewal failure [\#14](https://github.com/opus-codium/puppet-dehydrated/pull/14) ([smortex](https://github.com/smortex))
+- Add documentation for classes and defined types [\#13](https://github.com/opus-codium/puppet-dehydrated/pull/13) ([smortex](https://github.com/smortex))
+
+## [2.2.0](https://github.com/opus-codium/puppet-dehydrated/tree/2.2.0) (2019-05-07)
+
+[Full Changelog](https://github.com/opus-codium/puppet-dehydrated/compare/2.1.0...2.2.0)
+
+## [2.1.0](https://github.com/opus-codium/puppet-dehydrated/tree/2.1.0) (2018-12-05)
+
+[Full Changelog](https://github.com/opus-codium/puppet-dehydrated/compare/2.0.0...2.1.0)
+
+**Implemented enhancements:**
+
+- Add support for exec timeout option [\#9](https://github.com/opus-codium/puppet-dehydrated/pull/9) ([sergiik](https://github.com/sergiik))
+- Default to dehydrated 0.5.0 when installing from repos [\#5](https://github.com/opus-codium/puppet-dehydrated/pull/5) ([smortex](https://github.com/smortex))
+
+**Fixed bugs:**
+
+- Add missing dependency on `apache::mod::alias` [\#6](https://github.com/opus-codium/puppet-dehydrated/pull/6) ([smortex](https://github.com/smortex))
+
+## [2.0.0](https://github.com/opus-codium/puppet-dehydrated/tree/2.0.0) (2017-12-22)
+
+[Full Changelog](https://github.com/opus-codium/puppet-dehydrated/compare/1.1.0...2.0.0)
+
+**Implemented enhancements:**
+
+- Allow expressing dependencies [\#3](https://github.com/opus-codium/puppet-dehydrated/pull/3) ([smortex](https://github.com/smortex))
+- Extend and modernize puppet-dehydrated [\#2](https://github.com/opus-codium/puppet-dehydrated/pull/2) ([smortex](https://github.com/smortex))
+
+## [1.1.0](https://github.com/opus-codium/puppet-dehydrated/tree/1.1.0) (2017-06-01)
+
+[Full Changelog](https://github.com/opus-codium/puppet-dehydrated/compare/1.0.1...1.1.0)
+
+**Implemented enhancements:**
+
+- Update dehydrated to 0.4.0 [\#1](https://github.com/opus-codium/puppet-dehydrated/pull/1) ([neomilium](https://github.com/neomilium))
+
+## [1.0.1](https://github.com/opus-codium/puppet-dehydrated/tree/1.0.1) (2017-01-08)
+
+[Full Changelog](https://github.com/opus-codium/puppet-dehydrated/compare/1.0.0...1.0.1)
+
+## [1.0.0](https://github.com/opus-codium/puppet-dehydrated/tree/1.0.0) (2016-10-20)
+
+[Full Changelog](https://github.com/opus-codium/puppet-dehydrated/compare/4e5a5c199173891b0129eaa770343b586fd54574...1.0.0)
+
+
+
+\* *This Changelog was automatically generated by [github_changelog_generator](https://github.com/github-changelog-generator/github-changelog-generator)*
