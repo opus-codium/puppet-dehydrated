@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 
+## [3.0.0](https://github.com/opus-codium/puppet-dehydrated/tree/3.0.0) (2020-12-25)
+
+[Full Changelog](https://github.com/opus-codium/puppet-dehydrated/compare/2.4.1...3.0.0)
+
+**Implemented enhancements:**
+
+- Update the dehydrated repository URL [\#30](https://github.com/opus-codium/puppet-dehydrated/pull/30) ([smortex](https://github.com/smortex))
+
 ## [2.4.1](https://github.com/opus-codium/puppet-dehydrated/tree/2.4.1) (2020-12-25)
 
 [Full Changelog](https://github.com/opus-codium/puppet-dehydrated/compare/2.4.0...2.4.1)
