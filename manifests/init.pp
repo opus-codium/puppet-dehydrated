@@ -1,32 +1,32 @@
-# @summary Manage dehydrated
+# @summary Main class used to setup the system.
 #
-# @param apache_user
-# @param bin
-# @param etcdir
-# @param group
-# @param package
-# @param user
-# @param repo_source
-# @param repo_revision
-# @param dependencies
-# @param apache_integration
-# @param cron_integration
-# @param ip_version
-# @param ca
-# @param ca_terms
-# @param license
-# @param challengetype
-# @param keysize
-# @param openssl_cnf
-# @param hook
-# @param hook_chain
-# @param renew_days
-# @param private_key_renew
-# @param private_key_rollover
-# @param key_algo
-# @param contact_email
-# @param ocsp_must_staple
-# @param timeout
+# @param apache_user User account of apache httpd.
+# @param bin Path to the dehydrated command.
+# @param etcdir Path to the dehydrated configuration directory.
+# @param group Group of the user account used to manage certificates.
+# @param package Name of the package providing dehydrated.
+# @param user User account used to manage certificates.
+# @param repo_source URL of the repository providing dehydrated.
+# @param repo_revision Revision to fetch from the repository providing dehydrated.
+# @param dependencies Extra dependencies needed to run dehydrated.
+# @param apache_integration Setup apache to serve the generated challenges.
+# @param cron_integration Setup cron to automatically renew certificates.
+# @param ip_version Use only this IP version for name resolution.
+# @param ca Path to certificate authority.
+# @param ca_terms Path to certificate authority license terms redirect.
+# @param license Path to license agreement.
+# @param challengetype Challenge type to be used.
+# @param keysize Default keysize for private keys.
+# @param openssl_cnf Path to openssl config file.
+# @param hook Program or function called in certain situations.
+# @param hook_chain Chain clean_challenge|deploy_challenge arguments together into one hook call per certificate.
+# @param renew_days Minimum days before expiration to automatically renew certificate.
+# @param private_key_renew Regenerate private keys instead of just signing new certificates on renewal.
+# @param private_key_rollover Create an extra private key for rollover.
+# @param key_algo Which public key algorithm should be used?
+# @param contact_email E-mail address Let's Encrypt can use to reach you regarding your certificates.
+# @param ocsp_must_staple Option to add CSR-flag indicating OCSP stapling to be mandatory.
+# @param timeout Execution timeout for dehydrated tool.
 class dehydrated (
   String                      $apache_user,
   String                      $bin,
