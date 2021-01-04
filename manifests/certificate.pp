@@ -1,6 +1,6 @@
-# @summary Add a certificate to manage
+# @summary Class used to describe the certificates that should be maintained.
 #
-# @param domains List of Subject Alternative Names to include in the certificate
+# @param domains List of Subject Alternative Names (SAN) to include in the certificate
 define dehydrated::certificate (
   Array[String] $domains = [],
 ) {
