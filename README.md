@@ -1,7 +1,5 @@
 # dehydrated
 
-[![Build Status](https://travis-ci.com/opus-codium/puppet-dehydrated.svg?branch=master)](https://travis-ci.com/opus-codium/puppet-dehydrated)
-
 #### Table of Contents
 
 <!-- vim-markdown-toc GFM -->
