@@ -17,6 +17,7 @@ describe 'dehydrated::apache::vhost_attributes' do
         }
       PUPPET
     end
+
     it do
       is_expected.to run.with_params('hostname.example.com').and_return(
         {
@@ -36,6 +37,7 @@ describe 'dehydrated::apache::vhost_attributes' do
         }
       PUPPET
     end
+
     it do
       is_expected.to run.with_params('hostname.example.com').and_return(
         {
