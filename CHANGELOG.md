@@ -2,15 +2,27 @@
 
 All notable changes to this project will be documented in this file.
 
-The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
-and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [3.1.0](https://github.com/opus-codium/puppet-dehydrated/tree/3.1.0) (2021-04-13)
 
-## [3.0.0](https://github.com/opus-codium/puppet-dehydrated/tree/3.0.0) (2020-12-25)
+[Full Changelog](https://github.com/opus-codium/puppet-dehydrated/compare/3.0.0...3.1.0)
+
+**Implemented enhancements:**
+
+- Update dependencies [\#39](https://github.com/opus-codium/puppet-dehydrated/pull/39) ([smortex](https://github.com/smortex))
+- Add REFERENCE.md [\#32](https://github.com/opus-codium/puppet-dehydrated/pull/32) ([neomilium](https://github.com/neomilium))
+
+**Fixed bugs:**
+
+- Remove explicit data\_provider from metadata.json [\#35](https://github.com/opus-codium/puppet-dehydrated/pull/35) ([smortex](https://github.com/smortex))
+
+## [3.0.0](https://github.com/opus-codium/puppet-dehydrated/tree/3.0.0) (2020-12-26)
 
 [Full Changelog](https://github.com/opus-codium/puppet-dehydrated/compare/2.4.1...3.0.0)
 
-**Implemented enhancements:**
+**Breaking changes:**
 
 - Update the dehydrated repository URL [\#30](https://github.com/opus-codium/puppet-dehydrated/pull/30) ([smortex](https://github.com/smortex))
 
