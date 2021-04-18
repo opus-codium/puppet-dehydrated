@@ -38,7 +38,7 @@
   "requirements": [
     {
       "name": "puppet",
-      "version_requirement": ">= 5.0.0 < 8.0.0"
+      "version_requirement": ">= 6.0.0 < 8.0.0"
     }
   ],
   "description": "The dehydrated module lets you use Puppet to manage Let's Encrypt certificates creation and renewal using dehydrated."
