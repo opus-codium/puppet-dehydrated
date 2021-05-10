@@ -5,7 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [3.1.0](https://github.com/opus-codium/puppet-dehydrated/tree/3.1.0) (2021-04-13)
+## [4.0.0](https://github.com/opus-codium/puppet-dehydrated/tree/4.0.0) (2021-05-10)
+
+[Full Changelog](https://github.com/opus-codium/puppet-dehydrated/compare/3.1.0...4.0.0)
+
+**Breaking changes:**
+
+- Remove Puppet 5 from testing and bump minimal version to 6.0.0 [\#40](https://github.com/opus-codium/puppet-dehydrated/pull/40) ([smortex](https://github.com/smortex))
+
+**Implemented enhancements:**
+
+- Add a cleanup task to remove unmanaged certificates [\#41](https://github.com/opus-codium/puppet-dehydrated/pull/41) ([smortex](https://github.com/smortex))
+
+## [3.1.0](https://github.com/opus-codium/puppet-dehydrated/tree/3.1.0) (2021-04-14)
 
 [Full Changelog](https://github.com/opus-codium/puppet-dehydrated/compare/3.0.0...3.1.0)
 

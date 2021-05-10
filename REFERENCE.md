@@ -31,6 +31,7 @@
 
 ### Tasks
 
+* [`cleanup`](#cleanup): Cleanup certificates not managed by dehydrated anymore
 * [`renew`](#renew): Renew certificates about to expire
 
 ### Plans
@@ -464,6 +465,12 @@ Data type: `String`
 The name of the host to consider
 
 ## Tasks
+
+### <a name="cleanup"></a>`cleanup`
+
+Cleanup certificates not managed by dehydrated anymore
+
+**Supports noop?** false
 
 ### <a name="renew"></a>`renew`
 
