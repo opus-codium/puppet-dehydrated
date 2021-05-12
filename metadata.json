@@ -13,6 +13,10 @@
       "version_requirement": ">= 2.1.0 < 8.0.0"
     },
     {
+      "name": "puppetlabs/ruby_task_helper",
+      "version_requirement": ">= 0.6.0 < 1.0.0"
+    },
+    {
       "name": "puppetlabs/stdlib",
       "version_requirement": ">= 4.13.1 < 8.0.0"
     }

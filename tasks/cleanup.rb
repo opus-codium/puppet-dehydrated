@@ -1,20 +1,32 @@
 #!/usr/bin/env ruby
 
 require 'fileutils'
+require 'open3'
 
-managed_domains = []
+require_relative '../../ruby_task_helper/files/task_helper.rb'
 
-[
-  '/home/dehydrated/domains.txt',
-  '/usr/local/etc/dehydrated/domains.txt',
-].each do |domains_txt|
-  next unless File.readable?(domains_txt)
+class OldCertificatesCleaner < TaskHelper
+  def task(dehydrated_dir: nil, **_kwargs)
+    if dehydrated_dir.nil?
+      stdout, _stderr, _status = Open3.capture3('facter', '-p', 'osfamily')
+      osfamily = stdout.strip
+      dehydrated_dir = case osfamily
+                       when 'FreeBSD'
+                         '/usr/local/etc/dehydrated'
+                       else
+                         '/home/dehydrated'
+                       end
+    end
 
-  managed_domains = File.readlines(domains_txt).map(&:split).map(&:first)
+    domains_txt = File.join(dehydrated_dir, 'domains.txt')
+    managed_domains = File.readlines(domains_txt).map(&:split).map(&:first)
+
+    Dir[File.join(dehydrated_dir, 'certs', '*')].each do |directory|
+      next if managed_domains.include?(File.basename(directory))
+
+      FileUtils.rm_r(directory)
+    end
+  end
 end
 
-Dir['/home/dehydrated/certs/*', '/usr/local/etc/dehydrated/certs/*'].each do |directory|
-  next if managed_domains.include?(File.basename(directory))
-
-  FileUtils.rm_r(directory)
-end
+OldCertificatesCleaner.run if $PROGRAM_NAME == __FILE__

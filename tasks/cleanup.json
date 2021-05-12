@@ -1,3 +1,11 @@
 {
-  "description": "Cleanup certificates not managed by dehydrated anymore"
+  "description": "Cleanup certificates not managed by dehydrated anymore",
+  "files": ["ruby_task_helper/files/task_helper.rb"],
+  "input_method": "stdin",
+  "parameters": {
+    "dehydrated_dir": {
+      "description": "The directory of dehydrated",
+      "type": "Optional[Stdlib::AbsolutePath]"
+    }
+  }
 }
