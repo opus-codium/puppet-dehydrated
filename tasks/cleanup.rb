@@ -21,11 +21,16 @@ class OldCertificatesCleaner < TaskHelper
     domains_txt = File.join(dehydrated_dir, 'domains.txt')
     managed_domains = File.readlines(domains_txt).map(&:split).map(&:first)
 
+    res = []
+
     Dir[File.join(dehydrated_dir, 'certs', '*')].each do |directory|
       next if managed_domains.include?(File.basename(directory))
 
       FileUtils.rm_r(directory)
+      res << File.basename(directory)
     end
+
+    res
   end
 end
 
