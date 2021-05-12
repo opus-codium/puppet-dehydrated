@@ -6,7 +6,9 @@ require 'open3'
 require_relative '../../ruby_task_helper/files/task_helper.rb'
 
 class OldCertificatesCleaner < TaskHelper
-  def task(dehydrated_dir: nil, **_kwargs)
+  def task(dehydrated_dir: nil, **kwargs)
+    noop = kwargs[:_noop]
+
     if dehydrated_dir.nil?
       stdout, _stderr, _status = Open3.capture3('facter', '-p', 'osfamily')
       osfamily = stdout.strip
@@ -26,7 +28,7 @@ class OldCertificatesCleaner < TaskHelper
     Dir[File.join(dehydrated_dir, 'certs', '*')].each do |directory|
       next if managed_domains.include?(File.basename(directory))
 
-      FileUtils.rm_r(directory)
+      FileUtils.rm_r(directory, noop: noop)
       res << File.basename(directory)
     end
 

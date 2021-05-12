@@ -1,5 +1,6 @@
 {
   "description": "Cleanup certificates not managed by dehydrated anymore",
+  "supports_noop": true,
   "files": ["ruby_task_helper/files/task_helper.rb"],
   "input_method": "stdin",
   "parameters": {
