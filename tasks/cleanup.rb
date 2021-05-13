@@ -10,7 +10,7 @@ class OldCertificatesCleaner < TaskHelper
     noop = kwargs[:_noop]
 
     if dehydrated_dir.nil?
-      stdout, _stderr, _status = Open3.capture3('facter', '-p', 'osfamily')
+      stdout, _stderr, _status = Open3.capture3('facter', 'osfamily')
       osfamily = stdout.strip
       dehydrated_dir = case osfamily
                        when 'FreeBSD'
