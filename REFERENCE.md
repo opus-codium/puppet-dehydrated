@@ -470,7 +470,15 @@ The name of the host to consider
 
 Cleanup certificates not managed by dehydrated anymore
 
-**Supports noop?** false
+**Supports noop?** true
+
+#### Parameters
+
+##### `dehydrated_dir`
+
+Data type: `Optional[Stdlib::AbsolutePath]`
+
+The directory of dehydrated
 
 ### <a name="renew"></a>`renew`
 

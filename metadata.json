@@ -1,6 +1,6 @@
 {
   "name": "opuscodium-dehydrated",
-  "version": "4.0.0",
+  "version": "4.1.0",
   "author": "Opus Codium",
   "summary": "Manages Let's encrypt certificates using dehydrated",
   "license": "MIT",
