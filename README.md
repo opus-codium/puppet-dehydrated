@@ -1,5 +1,14 @@
 # dehydrated
 
+<!-- header GFM -->
+[![Build Status](https://img.shields.io/github/workflow/status/opus-codium/puppet-dehydrated/Release)](https://github.com/opus-codium/puppet-dehydrated/releases)
+[![Puppet Forge](https://img.shields.io/puppetforge/v/opuscodium/dehydrated.svg)](https://forge.puppetlabs.com/opuscodium/dehydrated)
+[![Puppet Forge - downloads](https://img.shields.io/puppetforge/dt/opuscodium/dehydrated.svg)](https://forge.puppetlabs.com/opuscodium/dehydrated)
+[![Puppet Forge - endorsement](https://img.shields.io/puppetforge/e/opuscodium/dehydrated.svg)](https://forge.puppetlabs.com/opuscodium/dehydrated)
+[![Puppet Forge - scores](https://img.shields.io/puppetforge/f/opuscodium/dehydrated.svg)](https://forge.puppetlabs.com/opuscodium/dehydrated)
+[![License](https://img.shields.io/github/license/opus-codium/puppet-dehydrated.svg)](https://github.com/voxpupuli/opuscodium-dehydrated/blob/master/LICENSE.md)
+<!-- header -->
+
 #### Table of Contents
 
 <!-- vim-markdown-toc GFM -->
