@@ -18,7 +18,7 @@ describe 'dehydrated' do
 
       case facts[:osfamily]
       when 'Debian'
-        it { is_expected.to contain_package('curl').with(ensure: 'present') }
+        it { is_expected.to contain_package('curl').with(ensure: 'installed') }
       when 'FreeBSD'
         it do
           is_expected.to contain_file('/usr/local/etc/dehydrated/config').without_content(/^PRIVATE_KEY_RENEW=/)
