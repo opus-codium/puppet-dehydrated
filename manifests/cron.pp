@@ -1,4 +1,6 @@
 # @summary Manage cron task to refresh certificates
+#
+# @api private
 class dehydrated::cron {
   assert_private()
 

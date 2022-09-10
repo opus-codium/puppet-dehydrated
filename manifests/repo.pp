@@ -1,4 +1,6 @@
 # @summary Manage the dehydrated code
+#
+# @api private
 class dehydrated::repo {
   assert_private()
 

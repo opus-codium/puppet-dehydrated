@@ -1,4 +1,6 @@
 # @summary Manage the dehydrated user
+#
+# @api private
 class dehydrated::user {
   assert_private()
 

@@ -1,4 +1,6 @@
 # @summary Manage dehydrated configuration
+#
+# @api private
 class dehydrated::config {
   assert_private()
 

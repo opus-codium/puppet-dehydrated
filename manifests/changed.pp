@@ -1,4 +1,6 @@
 # @summary Trigger a refresh of the certificates
+#
+# @api private
 class dehydrated::changed {
   assert_private()
 
