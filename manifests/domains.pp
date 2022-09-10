@@ -1,4 +1,6 @@
 # @summary Manage the domains.txt file
+#
+# @api private
 class dehydrated::domains {
   assert_private()
 
