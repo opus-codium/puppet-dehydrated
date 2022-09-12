@@ -5,6 +5,23 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [5.0.0](https://github.com/opus-codium/puppet-dehydrated/tree/5.0.0) (2022-09-10)
+
+[Full Changelog](https://github.com/opus-codium/puppet-dehydrated/compare/4.1.1...5.0.0)
+
+**Breaking changes:**
+
+- Drop support of Debian 8 \(EOL\) [\#48](https://github.com/opus-codium/puppet-dehydrated/pull/48) ([smortex](https://github.com/smortex))
+
+**Implemented enhancements:**
+
+- Add support for Debian 11 [\#47](https://github.com/opus-codium/puppet-dehydrated/pull/47) ([smortex](https://github.com/smortex))
+
+**Merged pull requests:**
+
+- Tag private classes @api private [\#50](https://github.com/opus-codium/puppet-dehydrated/pull/50) ([smortex](https://github.com/smortex))
+- Allow stdlib 8.x [\#49](https://github.com/opus-codium/puppet-dehydrated/pull/49) ([smortex](https://github.com/smortex))
+
 ## [4.1.1](https://github.com/opus-codium/puppet-dehydrated/tree/4.1.1) (2021-05-14)
 
 [Full Changelog](https://github.com/opus-codium/puppet-dehydrated/compare/4.1.0...4.1.1)

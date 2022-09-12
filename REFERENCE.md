@@ -6,15 +6,20 @@
 
 ### Classes
 
+#### Public Classes
+
 * [`dehydrated`](#dehydrated): Main class used to setup the system.
 * [`dehydrated::apache`](#dehydratedapache): Serve challenges with Apache
-* [`dehydrated::changed`](#dehydratedchanged): Trigger a refresh of the certificates
-* [`dehydrated::config`](#dehydratedconfig): Manage dehydrated configuration
-* [`dehydrated::cron`](#dehydratedcron): Manage cron task to refresh certificates
-* [`dehydrated::domains`](#dehydrateddomains): Manage the domains.txt file
-* [`dehydrated::package`](#dehydratedpackage): Manage the dehydrated package
-* [`dehydrated::repo`](#dehydratedrepo): Manage the dehydrated code
-* [`dehydrated::user`](#dehydrateduser): Manage the dehydrated user
+
+#### Private Classes
+
+* `dehydrated::changed`: Trigger a refresh of the certificates
+* `dehydrated::config`: Manage dehydrated configuration
+* `dehydrated::cron`: Manage cron task to refresh certificates
+* `dehydrated::domains`: Manage the domains.txt file
+* `dehydrated::package`: Manage the dehydrated package
+* `dehydrated::repo`: Manage the dehydrated code
+* `dehydrated::user`: Manage the dehydrated user
 
 ### Defined types
 
@@ -285,34 +290,6 @@ Default value: ``undef``
 ### <a name="dehydratedapache"></a>`dehydrated::apache`
 
 Serve challenges with Apache
-
-### <a name="dehydratedchanged"></a>`dehydrated::changed`
-
-Trigger a refresh of the certificates
-
-### <a name="dehydratedconfig"></a>`dehydrated::config`
-
-Manage dehydrated configuration
-
-### <a name="dehydratedcron"></a>`dehydrated::cron`
-
-Manage cron task to refresh certificates
-
-### <a name="dehydrateddomains"></a>`dehydrated::domains`
-
-Manage the domains.txt file
-
-### <a name="dehydratedpackage"></a>`dehydrated::package`
-
-Manage the dehydrated package
-
-### <a name="dehydratedrepo"></a>`dehydrated::repo`
-
-Manage the dehydrated code
-
-### <a name="dehydrateduser"></a>`dehydrated::user`
-
-Manage the dehydrated user
 
 ## Defined types
 
