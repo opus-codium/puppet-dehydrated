@@ -32,7 +32,7 @@ class OldCertificatesCleaner < TaskHelper
       res << File.basename(directory)
     end
 
-    res
+    { removed: res }
   end
 end
 
