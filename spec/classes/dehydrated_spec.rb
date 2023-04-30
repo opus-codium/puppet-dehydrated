@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 describe 'dehydrated' do
@@ -21,7 +23,7 @@ describe 'dehydrated' do
         it { is_expected.to contain_package('curl').with(ensure: 'installed') }
       when 'FreeBSD'
         it do
-          is_expected.to contain_file('/usr/local/etc/dehydrated/config').without_content(/^PRIVATE_KEY_RENEW=/)
+          is_expected.to contain_file('/usr/local/etc/dehydrated/config').without_content(%r{^PRIVATE_KEY_RENEW=})
         end
 
         context('private_key_renew') do
@@ -29,14 +31,15 @@ describe 'dehydrated' do
             let(:private_key_renew) { true }
 
             it do
-              is_expected.to contain_file('/usr/local/etc/dehydrated/config').with_content(/^PRIVATE_KEY_RENEW='yes'$/)
+              is_expected.to contain_file('/usr/local/etc/dehydrated/config').with_content(%r{^PRIVATE_KEY_RENEW='yes'$})
             end
           end
+
           context('false') do
             let(:private_key_renew) { false }
 
             it do
-              is_expected.to contain_file('/usr/local/etc/dehydrated/config').with_content(/^PRIVATE_KEY_RENEW='no'$/)
+              is_expected.to contain_file('/usr/local/etc/dehydrated/config').with_content(%r{^PRIVATE_KEY_RENEW='no'$})
             end
           end
         end

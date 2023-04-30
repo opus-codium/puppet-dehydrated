@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 describe 'dehydrated::apache::vhost_attributes' do
@@ -23,7 +25,7 @@ describe 'dehydrated::apache::vhost_attributes' do
         {
           'ssl_cert' => '/home/dehydrated/certs/hostname.example.com/fullchain.pem',
           'ssl_key'  => '/home/dehydrated/certs/hostname.example.com/privkey.pem',
-        },
+        }
       )
     end
   end
@@ -43,7 +45,7 @@ describe 'dehydrated::apache::vhost_attributes' do
         {
           'ssl_cert' => '/custom/etcdir/certs/hostname.example.com/fullchain.pem',
           'ssl_key'  => '/custom/etcdir/certs/hostname.example.com/privkey.pem',
-        },
+        }
       )
     end
   end
