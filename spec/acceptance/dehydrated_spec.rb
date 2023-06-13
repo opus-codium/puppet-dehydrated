@@ -16,7 +16,9 @@ describe 'dehydrated class' do
     shell('update-ca-certificates')
 
     options[:forge_host] = 'https://forge.puppet.com'
-    puppet_module_install(module_name: 'puppetlabs-vcsrepo')
+    # Version 6.0.0 dropped support for Puppet 6
+    # TODO: remove specific version selection when we drop support for Puppet 6
+    shell('puppet module install puppetlabs-vcsrepo --version 5.5.0')
 
     pp = <<~MANIFEST
       package { 'git':
