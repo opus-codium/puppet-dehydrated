@@ -1,9 +1,10 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: true
 
 require 'fileutils'
 require 'open3'
 
-require_relative '../../ruby_task_helper/files/task_helper.rb'
+require_relative '../../ruby_task_helper/files/task_helper'
 
 class OldCertificatesCleaner < TaskHelper
   def task(dehydrated_dir: nil, **kwargs)

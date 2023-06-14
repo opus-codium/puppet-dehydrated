@@ -9,7 +9,7 @@
 #### Public Classes
 
 * [`dehydrated`](#dehydrated): Main class used to setup the system.
-* [`dehydrated::apache`](#dehydratedapache): Serve challenges with Apache
+* [`dehydrated::apache`](#dehydrated--apache): Serve challenges with Apache
 
 #### Private Classes
 
@@ -23,16 +23,16 @@
 
 ### Defined types
 
-* [`dehydrated::certificate`](#dehydratedcertificate): Class used to describe the certificates that should be maintained.
+* [`dehydrated::certificate`](#dehydrated--certificate): Class used to describe the certificates that should be maintained.
 
 ### Functions
 
-* [`dehydrated::apache::vhost_attributes`](#dehydratedapachevhost_attributes): Return the apache::vhost SSL configuration for a host
-* [`dehydrated::certsdir`](#dehydratedcertsdir): Return the root directory of dehydrated certificates
-* [`dehydrated::ssl_cert_file`](#dehydratedssl_cert_file): Return the full path to a certificate file
-* [`dehydrated::ssl_chain_file`](#dehydratedssl_chain_file): Return the full path to a certificate chain file
-* [`dehydrated::ssl_fullchain_file`](#dehydratedssl_fullchain_file): Return the full path to a certificate fullchain file
-* [`dehydrated::ssl_privkey_file`](#dehydratedssl_privkey_file): Return the full path to a private key file
+* [`dehydrated::apache::vhost_attributes`](#dehydrated--apache--vhost_attributes): Return the apache::vhost SSL configuration for a host
+* [`dehydrated::certsdir`](#dehydrated--certsdir): Return the root directory of dehydrated certificates
+* [`dehydrated::ssl_cert_file`](#dehydrated--ssl_cert_file): Return the full path to a certificate file
+* [`dehydrated::ssl_chain_file`](#dehydrated--ssl_chain_file): Return the full path to a certificate chain file
+* [`dehydrated::ssl_fullchain_file`](#dehydrated--ssl_fullchain_file): Return the full path to a certificate fullchain file
+* [`dehydrated::ssl_privkey_file`](#dehydrated--ssl_privkey_file): Return the full path to a private key file
 
 ### Tasks
 
@@ -41,7 +41,7 @@
 
 ### Plans
 
-* [`dehydrated::renew`](#dehydratedrenew): Renew certificates about to expire
+* [`dehydrated::renew`](#dehydrated--renew): Renew certificates about to expire
 
 ## Classes
 
@@ -53,53 +53,53 @@ Main class used to setup the system.
 
 The following parameters are available in the `dehydrated` class:
 
-* [`apache_user`](#apache_user)
-* [`bin`](#bin)
-* [`etcdir`](#etcdir)
-* [`group`](#group)
-* [`package`](#package)
-* [`user`](#user)
-* [`repo_source`](#repo_source)
-* [`repo_revision`](#repo_revision)
-* [`dependencies`](#dependencies)
-* [`apache_integration`](#apache_integration)
-* [`cron_integration`](#cron_integration)
-* [`ip_version`](#ip_version)
-* [`ca`](#ca)
-* [`ca_terms`](#ca_terms)
-* [`license`](#license)
-* [`challengetype`](#challengetype)
-* [`keysize`](#keysize)
-* [`openssl_cnf`](#openssl_cnf)
-* [`hook`](#hook)
-* [`hook_chain`](#hook_chain)
-* [`renew_days`](#renew_days)
-* [`private_key_renew`](#private_key_renew)
-* [`private_key_rollover`](#private_key_rollover)
-* [`key_algo`](#key_algo)
-* [`contact_email`](#contact_email)
-* [`ocsp_must_staple`](#ocsp_must_staple)
-* [`timeout`](#timeout)
+* [`apache_user`](#-dehydrated--apache_user)
+* [`bin`](#-dehydrated--bin)
+* [`etcdir`](#-dehydrated--etcdir)
+* [`group`](#-dehydrated--group)
+* [`package`](#-dehydrated--package)
+* [`user`](#-dehydrated--user)
+* [`repo_source`](#-dehydrated--repo_source)
+* [`repo_revision`](#-dehydrated--repo_revision)
+* [`dependencies`](#-dehydrated--dependencies)
+* [`apache_integration`](#-dehydrated--apache_integration)
+* [`cron_integration`](#-dehydrated--cron_integration)
+* [`ip_version`](#-dehydrated--ip_version)
+* [`ca`](#-dehydrated--ca)
+* [`ca_terms`](#-dehydrated--ca_terms)
+* [`license`](#-dehydrated--license)
+* [`challengetype`](#-dehydrated--challengetype)
+* [`keysize`](#-dehydrated--keysize)
+* [`openssl_cnf`](#-dehydrated--openssl_cnf)
+* [`hook`](#-dehydrated--hook)
+* [`hook_chain`](#-dehydrated--hook_chain)
+* [`renew_days`](#-dehydrated--renew_days)
+* [`private_key_renew`](#-dehydrated--private_key_renew)
+* [`private_key_rollover`](#-dehydrated--private_key_rollover)
+* [`key_algo`](#-dehydrated--key_algo)
+* [`contact_email`](#-dehydrated--contact_email)
+* [`ocsp_must_staple`](#-dehydrated--ocsp_must_staple)
+* [`timeout`](#-dehydrated--timeout)
 
-##### <a name="apache_user"></a>`apache_user`
+##### <a name="-dehydrated--apache_user"></a>`apache_user`
 
 Data type: `String`
 
 User account of apache httpd.
 
-##### <a name="bin"></a>`bin`
+##### <a name="-dehydrated--bin"></a>`bin`
 
 Data type: `String`
 
 Path to the dehydrated command.
 
-##### <a name="etcdir"></a>`etcdir`
+##### <a name="-dehydrated--etcdir"></a>`etcdir`
 
 Data type: `String`
 
 Path to the dehydrated configuration directory.
 
-##### <a name="group"></a>`group`
+##### <a name="-dehydrated--group"></a>`group`
 
 Data type: `String`
 
@@ -107,13 +107,13 @@ Group of the user account used to manage certificates.
 
 Default value: `'dehydrated'`
 
-##### <a name="package"></a>`package`
+##### <a name="-dehydrated--package"></a>`package`
 
 Data type: `Optional[String]`
 
 Name of the package providing dehydrated.
 
-##### <a name="user"></a>`user`
+##### <a name="-dehydrated--user"></a>`user`
 
 Data type: `String`
 
@@ -121,7 +121,7 @@ User account used to manage certificates.
 
 Default value: `'dehydrated'`
 
-##### <a name="repo_source"></a>`repo_source`
+##### <a name="-dehydrated--repo_source"></a>`repo_source`
 
 Data type: `String`
 
@@ -129,7 +129,7 @@ URL of the repository providing dehydrated.
 
 Default value: `'https://github.com/dehydrated-io/dehydrated.git'`
 
-##### <a name="repo_revision"></a>`repo_revision`
+##### <a name="-dehydrated--repo_revision"></a>`repo_revision`
 
 Data type: `String`
 
@@ -137,7 +137,7 @@ Revision to fetch from the repository providing dehydrated.
 
 Default value: `'v0.7.0'`
 
-##### <a name="dependencies"></a>`dependencies`
+##### <a name="-dehydrated--dependencies"></a>`dependencies`
 
 Data type: `Array[String]`
 
@@ -145,155 +145,155 @@ Extra dependencies needed to run dehydrated.
 
 Default value: `[]`
 
-##### <a name="apache_integration"></a>`apache_integration`
+##### <a name="-dehydrated--apache_integration"></a>`apache_integration`
 
 Data type: `Boolean`
 
 Setup apache to serve the generated challenges.
 
-Default value: ``false``
+Default value: `false`
 
-##### <a name="cron_integration"></a>`cron_integration`
+##### <a name="-dehydrated--cron_integration"></a>`cron_integration`
 
 Data type: `Boolean`
 
 Setup cron to automatically renew certificates.
 
-Default value: ``false``
+Default value: `false`
 
-##### <a name="ip_version"></a>`ip_version`
+##### <a name="-dehydrated--ip_version"></a>`ip_version`
 
 Data type: `Optional[Variant[Integer[4,4],Integer[6,6]]]`
 
 Use only this IP version for name resolution.
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="ca"></a>`ca`
+##### <a name="-dehydrated--ca"></a>`ca`
 
 Data type: `Optional[Stdlib::Httpurl]`
 
 Path to certificate authority.
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="ca_terms"></a>`ca_terms`
+##### <a name="-dehydrated--ca_terms"></a>`ca_terms`
 
 Data type: `Optional[Stdlib::Httpurl]`
 
 Path to certificate authority license terms redirect.
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="license"></a>`license`
+##### <a name="-dehydrated--license"></a>`license`
 
 Data type: `Optional[String]`
 
 Path to license agreement.
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="challengetype"></a>`challengetype`
+##### <a name="-dehydrated--challengetype"></a>`challengetype`
 
 Data type: `Optional[Enum['http-01', 'dns-01']]`
 
 Challenge type to be used.
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="keysize"></a>`keysize`
+##### <a name="-dehydrated--keysize"></a>`keysize`
 
 Data type: `Optional[Integer[0]]`
 
 Default keysize for private keys.
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="openssl_cnf"></a>`openssl_cnf`
+##### <a name="-dehydrated--openssl_cnf"></a>`openssl_cnf`
 
 Data type: `Optional[String]`
 
 Path to openssl config file.
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="hook"></a>`hook`
+##### <a name="-dehydrated--hook"></a>`hook`
 
 Data type: `Optional[String]`
 
 Program or function called in certain situations.
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="hook_chain"></a>`hook_chain`
+##### <a name="-dehydrated--hook_chain"></a>`hook_chain`
 
 Data type: `Optional[Boolean]`
 
 Chain clean_challenge|deploy_challenge arguments together into one hook call per certificate.
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="renew_days"></a>`renew_days`
+##### <a name="-dehydrated--renew_days"></a>`renew_days`
 
 Data type: `Optional[Integer[0]]`
 
 Minimum days before expiration to automatically renew certificate.
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="private_key_renew"></a>`private_key_renew`
+##### <a name="-dehydrated--private_key_renew"></a>`private_key_renew`
 
 Data type: `Optional[Boolean]`
 
 Regenerate private keys instead of just signing new certificates on renewal.
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="private_key_rollover"></a>`private_key_rollover`
+##### <a name="-dehydrated--private_key_rollover"></a>`private_key_rollover`
 
 Data type: `Optional[Boolean]`
 
 Create an extra private key for rollover.
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="key_algo"></a>`key_algo`
+##### <a name="-dehydrated--key_algo"></a>`key_algo`
 
 Data type: `Optional[Enum['rsa', 'prime256v1', 'secp384r1']]`
 
 Which public key algorithm should be used?
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="contact_email"></a>`contact_email`
+##### <a name="-dehydrated--contact_email"></a>`contact_email`
 
 Data type: `String`
 
 E-mail address Let's Encrypt can use to reach you regarding your certificates.
 
-##### <a name="ocsp_must_staple"></a>`ocsp_must_staple`
+##### <a name="-dehydrated--ocsp_must_staple"></a>`ocsp_must_staple`
 
 Data type: `Optional[Boolean]`
 
 Option to add CSR-flag indicating OCSP stapling to be mandatory.
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="timeout"></a>`timeout`
+##### <a name="-dehydrated--timeout"></a>`timeout`
 
 Data type: `Optional[Integer[0]]`
 
 Execution timeout for dehydrated tool.
 
-Default value: ``undef``
+Default value: `undef`
 
-### <a name="dehydratedapache"></a>`dehydrated::apache`
+### <a name="dehydrated--apache"></a>`dehydrated::apache`
 
 Serve challenges with Apache
 
 ## Defined types
 
-### <a name="dehydratedcertificate"></a>`dehydrated::certificate`
+### <a name="dehydrated--certificate"></a>`dehydrated::certificate`
 
 Class used to describe the certificates that should be maintained.
 
@@ -301,9 +301,9 @@ Class used to describe the certificates that should be maintained.
 
 The following parameters are available in the `dehydrated::certificate` defined type:
 
-* [`domains`](#domains)
+* [`domains`](#-dehydrated--certificate--domains)
 
-##### <a name="domains"></a>`domains`
+##### <a name="-dehydrated--certificate--domains"></a>`domains`
 
 Data type: `Array[String]`
 
@@ -313,7 +313,7 @@ Default value: `[]`
 
 ## Functions
 
-### <a name="dehydratedapachevhost_attributes"></a>`dehydrated::apache::vhost_attributes`
+### <a name="dehydrated--apache--vhost_attributes"></a>`dehydrated::apache::vhost_attributes`
 
 Type: Puppet Language
 
@@ -357,7 +357,7 @@ Data type: `String`
 
 The name of the host to consider
 
-### <a name="dehydratedcertsdir"></a>`dehydrated::certsdir`
+### <a name="dehydrated--certsdir"></a>`dehydrated::certsdir`
 
 Type: Puppet Language
 
@@ -369,7 +369,7 @@ Return the root directory of dehydrated certificates
 
 Returns: `String` The directory of dehydrated certificates
 
-### <a name="dehydratedssl_cert_file"></a>`dehydrated::ssl_cert_file`
+### <a name="dehydrated--ssl_cert_file"></a>`dehydrated::ssl_cert_file`
 
 Type: Puppet Language
 
@@ -387,7 +387,7 @@ Data type: `String`
 
 The name of the host to consider
 
-### <a name="dehydratedssl_chain_file"></a>`dehydrated::ssl_chain_file`
+### <a name="dehydrated--ssl_chain_file"></a>`dehydrated::ssl_chain_file`
 
 Type: Puppet Language
 
@@ -405,7 +405,7 @@ Data type: `String`
 
 The name of the host to consider
 
-### <a name="dehydratedssl_fullchain_file"></a>`dehydrated::ssl_fullchain_file`
+### <a name="dehydrated--ssl_fullchain_file"></a>`dehydrated::ssl_fullchain_file`
 
 Type: Puppet Language
 
@@ -423,7 +423,7 @@ Data type: `String`
 
 The name of the host to consider
 
-### <a name="dehydratedssl_privkey_file"></a>`dehydrated::ssl_privkey_file`
+### <a name="dehydrated--ssl_privkey_file"></a>`dehydrated::ssl_privkey_file`
 
 Type: Puppet Language
 
@@ -465,7 +465,7 @@ Renew certificates about to expire
 
 ## Plans
 
-### <a name="dehydratedrenew"></a>`dehydrated::renew`
+### <a name="dehydrated--renew"></a>`dehydrated::renew`
 
 Renew certificates about to expire
 
@@ -473,9 +473,9 @@ Renew certificates about to expire
 
 The following parameters are available in the `dehydrated::renew` plan:
 
-* [`targets`](#targets)
+* [`targets`](#-dehydrated--renew--targets)
 
-##### <a name="targets"></a>`targets`
+##### <a name="-dehydrated--renew--targets"></a>`targets`
 
 Data type: `TargetSpec`
 
