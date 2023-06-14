@@ -1,13 +1,21 @@
 # Changelog
 
 All notable changes to this project will be documented in this file.
+Each new release typically also includes the latest modulesync defaults.
+These should not affect the functionality of the module.
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+## [v6.0.0](https://github.com/opus-codium/puppet-dehydrated/tree/v6.0.0) (2023-06-14)
 
-## [5.0.0](https://github.com/opus-codium/puppet-dehydrated/tree/5.0.0) (2022-09-10)
+[Full Changelog](https://github.com/opus-codium/puppet-dehydrated/compare/v5.0.0...v6.0.0)
 
-[Full Changelog](https://github.com/opus-codium/puppet-dehydrated/compare/4.1.1...5.0.0)
+**Breaking changes:**
+
+- Drop Debian 9 \(EOL\) [\#54](https://github.com/opus-codium/puppet-dehydrated/pull/54) ([smortex](https://github.com/smortex))
+- Return a hash of removed certificates in the `dehydrated::cleanup` task [\#52](https://github.com/opus-codium/puppet-dehydrated/pull/52) ([smortex](https://github.com/smortex))
+
+## [v5.0.0](https://github.com/opus-codium/puppet-dehydrated/tree/v5.0.0) (2022-09-12)
+
+[Full Changelog](https://github.com/opus-codium/puppet-dehydrated/compare/4.1.1...v5.0.0)
 
 **Breaking changes:**
 
@@ -37,6 +45,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 **Implemented enhancements:**
 
 - Add support for --noop to dehydrated::cleanup [\#42](https://github.com/opus-codium/puppet-dehydrated/pull/42) ([smortex](https://github.com/smortex))
+
+**Merged pull requests:**
+
+- No need to load puppet facts [\#43](https://github.com/opus-codium/puppet-dehydrated/pull/43) ([smortex](https://github.com/smortex))
 
 ## [4.0.0](https://github.com/opus-codium/puppet-dehydrated/tree/4.0.0) (2021-05-10)
 
@@ -87,6 +99,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Default to dehydrated 0.7.0 when installing from repos [\#26](https://github.com/opus-codium/puppet-dehydrated/pull/26) ([smortex](https://github.com/smortex))
 - Move common default values to init.pp [\#25](https://github.com/opus-codium/puppet-dehydrated/pull/25) ([smortex](https://github.com/smortex))
+
+**Merged pull requests:**
+
+- Add a GitHub action for publishing to the forge [\#24](https://github.com/opus-codium/puppet-dehydrated/pull/24) ([smortex](https://github.com/smortex))
+- Switch from Travis CI to GitHub Actions [\#23](https://github.com/opus-codium/puppet-dehydrated/pull/23) ([neomilium](https://github.com/neomilium))
 
 ## [2.3.0](https://github.com/opus-codium/puppet-dehydrated/tree/2.3.0) (2020-09-04)
 
