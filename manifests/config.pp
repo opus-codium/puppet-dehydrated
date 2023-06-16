@@ -18,5 +18,5 @@ class dehydrated::config {
     mode   => '0755',
   }
 
-  ensure_packages($dehydrated::dependencies, { ensure => 'present' })
+  stdlib::ensure_packages($dehydrated::dependencies, { ensure => 'present' })
 }
