@@ -10,7 +10,7 @@
   "dependencies": [
     {
       "name": "puppetlabs/concat",
-      "version_requirement": ">= 2.1.0 < 8.0.0"
+      "version_requirement": ">= 2.1.0 < 10.0.0"
     },
     {
       "name": "puppetlabs/ruby_task_helper",
@@ -18,7 +18,7 @@
     },
     {
       "name": "puppetlabs/stdlib",
-      "version_requirement": ">= 4.13.1 < 9.0.0"
+      "version_requirement": ">= 4.13.1 < 10.0.0"
     }
   ],
   "operatingsystem_support": [
