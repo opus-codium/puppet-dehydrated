@@ -4,7 +4,24 @@ All notable changes to this project will be documented in this file.
 Each new release typically also includes the latest modulesync defaults.
 These should not affect the functionality of the module.
 
-## [v6.0.0](https://github.com/opus-codium/puppet-dehydrated/tree/v6.0.0) (2023-06-14)
+## [v7.0.0](https://github.com/opus-codium/puppet-dehydrated/tree/v7.0.0) (2023-07-07)
+
+[Full Changelog](https://github.com/opus-codium/puppet-dehydrated/compare/v6.0.0...v7.0.0)
+
+**Breaking changes:**
+
+- Require puppetlabs/stdlib 9.x [\#59](https://github.com/opus-codium/puppet-dehydrated/pull/59) ([smortex](https://github.com/smortex))
+- Drop Puppet 6 \(EOL\) [\#55](https://github.com/opus-codium/puppet-dehydrated/pull/55) ([smortex](https://github.com/smortex))
+
+**Implemented enhancements:**
+
+- Add support for Puppet 8 [\#58](https://github.com/opus-codium/puppet-dehydrated/pull/58) ([smortex](https://github.com/smortex))
+
+**Merged pull requests:**
+
+- Relax dependencies version requirements [\#57](https://github.com/opus-codium/puppet-dehydrated/pull/57) ([smortex](https://github.com/smortex))
+
+## [v6.0.0](https://github.com/opus-codium/puppet-dehydrated/tree/v6.0.0) (2023-06-15)
 
 [Full Changelog](https://github.com/opus-codium/puppet-dehydrated/compare/v5.0.0...v6.0.0)
 
