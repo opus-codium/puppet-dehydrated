@@ -1,7 +1,7 @@
 # dehydrated
 
 <!-- header GFM -->
-[![Build Status](https://img.shields.io/github/workflow/status/opus-codium/puppet-dehydrated/Release)](https://github.com/opus-codium/puppet-dehydrated/releases)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/opus-codium/puppet-dehydrated/release.yml)](https://github.com/opus-codium/puppet-dehydrated/releases)
 [![Puppet Forge](https://img.shields.io/puppetforge/v/opuscodium/dehydrated.svg)](https://forge.puppetlabs.com/opuscodium/dehydrated)
 [![Puppet Forge - downloads](https://img.shields.io/puppetforge/dt/opuscodium/dehydrated.svg)](https://forge.puppetlabs.com/opuscodium/dehydrated)
 [![Puppet Forge - endorsement](https://img.shields.io/puppetforge/e/opuscodium/dehydrated.svg)](https://forge.puppetlabs.com/opuscodium/dehydrated)
