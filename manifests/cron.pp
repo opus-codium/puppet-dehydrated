@@ -13,7 +13,7 @@ class dehydrated::cron {
   case $facts['os']['family'] {
     'Debian', 'RedHat': {
       cron { 'weekly_letsencrypt':
-        ensure  => absent,
+        ensure => absent,
       }
       cron { 'weekly_dehydrated':
         ensure  => $ensure,
