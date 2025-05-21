@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file.
 Each new release typically also includes the latest modulesync defaults.
 These should not affect the functionality of the module.
 
+## [v7.1.0](https://github.com/opus-codium/puppet-dehydrated/tree/v7.1.0) (2025-05-21)
+
+[Full Changelog](https://github.com/opus-codium/puppet-dehydrated/compare/v7.0.0...v7.1.0)
+
+**Implemented enhancements:**
+
+- Allow puppetlabs/ruby\_task\_helper 1.x [\#69](https://github.com/opus-codium/puppet-dehydrated/pull/69) ([smortex](https://github.com/smortex))
+- Add support for FreeBSD 14 [\#67](https://github.com/opus-codium/puppet-dehydrated/pull/67) ([smortex](https://github.com/smortex))
+- Add support for Debian 12 [\#66](https://github.com/opus-codium/puppet-dehydrated/pull/66) ([smortex](https://github.com/smortex))
+
 ## [v7.0.0](https://github.com/opus-codium/puppet-dehydrated/tree/v7.0.0) (2023-07-07)
 
 [Full Changelog](https://github.com/opus-codium/puppet-dehydrated/compare/v6.0.0...v7.0.0)
