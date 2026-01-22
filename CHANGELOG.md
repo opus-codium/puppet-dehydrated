@@ -4,6 +4,21 @@ All notable changes to this project will be documented in this file.
 Each new release typically also includes the latest modulesync defaults.
 These should not affect the functionality of the module.
 
+## [v8.0.0](https://github.com/opus-codium/puppet-dehydrated/tree/v8.0.0) (2026-01-22)
+
+[Full Changelog](https://github.com/opus-codium/puppet-dehydrated/compare/v7.1.0...v8.0.0)
+
+**Breaking changes:**
+
+- Bump dehydrated to 0.7.2 [\#76](https://github.com/opus-codium/puppet-dehydrated/pull/76) ([smortex](https://github.com/smortex))
+- Drop legacy parameters [\#75](https://github.com/opus-codium/puppet-dehydrated/pull/75) ([smortex](https://github.com/smortex))
+- Switch form Puppet to OpenVox [\#73](https://github.com/opus-codium/puppet-dehydrated/pull/73) ([smortex](https://github.com/smortex))
+
+**Implemented enhancements:**
+
+- Add support for FreeBSD 15 [\#77](https://github.com/opus-codium/puppet-dehydrated/pull/77) ([smortex](https://github.com/smortex))
+- Add support for Debian 13 [\#74](https://github.com/opus-codium/puppet-dehydrated/pull/74) ([smortex](https://github.com/smortex))
+
 ## [v7.1.0](https://github.com/opus-codium/puppet-dehydrated/tree/v7.1.0) (2025-05-21)
 
 [Full Changelog](https://github.com/opus-codium/puppet-dehydrated/compare/v7.0.0...v7.1.0)
