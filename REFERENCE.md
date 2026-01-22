@@ -64,11 +64,24 @@ The following parameters are available in the `dehydrated` class:
 * [`dependencies`](#-dehydrated--dependencies)
 * [`apache_integration`](#-dehydrated--apache_integration)
 * [`cron_integration`](#-dehydrated--cron_integration)
+* [`dehydrated_user`](#-dehydrated--dehydrated_user)
+* [`dehydrated_group`](#-dehydrated--dehydrated_group)
 * [`ip_version`](#-dehydrated--ip_version)
 * [`ca`](#-dehydrated--ca)
+* [`oldca`](#-dehydrated--oldca)
 * [`challengetype`](#-dehydrated--challengetype)
+* [`config_d`](#-dehydrated--config_d)
+* [`domains_d`](#-dehydrated--domains_d)
+* [`basedir`](#-dehydrated--basedir)
+* [`domains_txt`](#-dehydrated--domains_txt)
+* [`certdir`](#-dehydrated--certdir)
+* [`alpncertdir`](#-dehydrated--alpncertdir)
+* [`accountdir`](#-dehydrated--accountdir)
+* [`wellknown`](#-dehydrated--wellknown)
 * [`keysize`](#-dehydrated--keysize)
 * [`openssl_cnf`](#-dehydrated--openssl_cnf)
+* [`openssl`](#-dehydrated--openssl)
+* [`curl_opts`](#-dehydrated--curl_opts)
 * [`hook`](#-dehydrated--hook)
 * [`hook_chain`](#-dehydrated--hook_chain)
 * [`renew_days`](#-dehydrated--renew_days)
@@ -76,7 +89,18 @@ The following parameters are available in the `dehydrated` class:
 * [`private_key_rollover`](#-dehydrated--private_key_rollover)
 * [`key_algo`](#-dehydrated--key_algo)
 * [`contact_email`](#-dehydrated--contact_email)
+* [`lockfile`](#-dehydrated--lockfile)
 * [`ocsp_must_staple`](#-dehydrated--ocsp_must_staple)
+* [`ocsp_fetch`](#-dehydrated--ocsp_fetch)
+* [`ocsp_days`](#-dehydrated--ocsp_days)
+* [`chaincache`](#-dehydrated--chaincache)
+* [`auto_cleanup`](#-dehydrated--auto_cleanup)
+* [`auto_cleanup_delete`](#-dehydrated--auto_cleanup_delete)
+* [`api`](#-dehydrated--api)
+* [`preferred_chain`](#-dehydrated--preferred_chain)
+* [`acme_profile`](#-dehydrated--acme_profile)
+* [`order_timeout`](#-dehydrated--order_timeout)
+* [`keep_going`](#-dehydrated--keep_going)
 * [`timeout`](#-dehydrated--timeout)
 
 ##### <a name="-dehydrated--apache_user"></a>`apache_user`
@@ -133,7 +157,7 @@ Data type: `String`
 
 Revision to fetch from the repository providing dehydrated.
 
-Default value: `'v0.7.0'`
+Default value: `'v0.7.2'`
 
 ##### <a name="-dehydrated--dependencies"></a>`dependencies`
 
@@ -159,19 +183,43 @@ Setup cron to automatically renew certificates.
 
 Default value: `false`
 
+##### <a name="-dehydrated--dehydrated_user"></a>`dehydrated_user`
+
+Data type: `Optional[String[1]]`
+
+Which user should dehydrated run as? This will be implicitly enforced when running as root.
+
+Default value: `undef`
+
+##### <a name="-dehydrated--dehydrated_group"></a>`dehydrated_group`
+
+Data type: `Optional[String[1]]`
+
+Which group should dehydrated run as? This will be implicitly enforced when running as root.
+
+Default value: `undef`
+
 ##### <a name="-dehydrated--ip_version"></a>`ip_version`
 
 Data type: `Optional[Variant[Integer[4,4],Integer[6,6]]]`
 
-Use only this IP version for name resolution.
+Resolve names to addresses of IP version only. (curl)
 
 Default value: `undef`
 
 ##### <a name="-dehydrated--ca"></a>`ca`
 
+Data type: `Optional[String[1]]`
+
+URL to certificate authority or internal preset.
+
+Default value: `undef`
+
+##### <a name="-dehydrated--oldca"></a>`oldca`
+
 Data type: `Optional[Stdlib::Httpurl]`
 
-Path to certificate authority.
+Path to old certificate authority
 
 Default value: `undef`
 
@@ -182,6 +230,70 @@ Data type: `Optional[Enum['http-01', 'dns-01']]`
 Challenge type to be used.
 
 Default value: `undef`
+
+##### <a name="-dehydrated--config_d"></a>`config_d`
+
+Data type: `Optional[String[1]]`
+
+Path to a directory containing additional config files.
+
+Default value: `undef`
+
+##### <a name="-dehydrated--domains_d"></a>`domains_d`
+
+Data type: `Optional[String[1]]`
+
+Directory for per-domain configuration files.
+
+Default value: `undef`
+
+##### <a name="-dehydrated--basedir"></a>`basedir`
+
+Data type: `Optional[String[1]]`
+
+Base directory for account key, generated certificates and list of domains.
+
+Default value: `undef`
+
+##### <a name="-dehydrated--domains_txt"></a>`domains_txt`
+
+Data type: `Optional[String[1]]`
+
+File containing the list of domains to request certificates for.
+
+Default value: `undef`
+
+##### <a name="-dehydrated--certdir"></a>`certdir`
+
+Data type: `Optional[String[1]]`
+
+Output directory for generated certificates.
+
+Default value: `undef`
+
+##### <a name="-dehydrated--alpncertdir"></a>`alpncertdir`
+
+Data type: `Optional[String[1]]`
+
+Output directory for alpn verification certificates
+
+Default value: `undef`
+
+##### <a name="-dehydrated--accountdir"></a>`accountdir`
+
+Data type: `Optional[String[1]]`
+
+Directory for account keys and registration information.
+
+Default value: `undef`
+
+##### <a name="-dehydrated--wellknown"></a>`wellknown`
+
+Data type: `String[1]`
+
+Output directory for challenge-tokens to be served by webserver or deployed in HOOK.
+
+Default value: `"${dehydrated::etcdir}/.acme-challenges"`
 
 ##### <a name="-dehydrated--keysize"></a>`keysize`
 
@@ -196,6 +308,22 @@ Default value: `undef`
 Data type: `Optional[String]`
 
 Path to openssl config file.
+
+Default value: `undef`
+
+##### <a name="-dehydrated--openssl"></a>`openssl`
+
+Data type: `Optional[String[1]]`
+
+Path to OpenSSL binary.
+
+Default value: `undef`
+
+##### <a name="-dehydrated--curl_opts"></a>`curl_opts`
+
+Data type: `Optional[String[1]]`
+
+Extra options passed to the curl binary.
 
 Default value: `undef`
 
@@ -253,11 +381,99 @@ Data type: `String`
 
 E-mail address Let's Encrypt can use to reach you regarding your certificates.
 
+##### <a name="-dehydrated--lockfile"></a>`lockfile`
+
+Data type: `Optional[String[1]]`
+
+Lockfile location, to prevent concurrent access.
+
+Default value: `undef`
+
 ##### <a name="-dehydrated--ocsp_must_staple"></a>`ocsp_must_staple`
 
 Data type: `Optional[Boolean]`
 
 Option to add CSR-flag indicating OCSP stapling to be mandatory.
+
+Default value: `undef`
+
+##### <a name="-dehydrated--ocsp_fetch"></a>`ocsp_fetch`
+
+Data type: `Optional[Boolean]`
+
+Fetch OCSP responses.
+
+Default value: `undef`
+
+##### <a name="-dehydrated--ocsp_days"></a>`ocsp_days`
+
+Data type: `Optional[Integer[0]]`
+
+OCSP refresh interval.
+
+Default value: `undef`
+
+##### <a name="-dehydrated--chaincache"></a>`chaincache`
+
+Data type: `Optional[String[1]]`
+
+Issuer chain cache directory.
+
+Default value: `undef`
+
+##### <a name="-dehydrated--auto_cleanup"></a>`auto_cleanup`
+
+Data type: `Optional[Boolean]`
+
+Automatic cleanup.
+
+Default value: `undef`
+
+##### <a name="-dehydrated--auto_cleanup_delete"></a>`auto_cleanup_delete`
+
+Data type: `Optional[Boolean]`
+
+Delete files during automatic cleanup instead of moving to archive.
+
+Default value: `undef`
+
+##### <a name="-dehydrated--api"></a>`api`
+
+Data type: `Optional[String[1]]`
+
+ACME API version.
+
+Default value: `undef`
+
+##### <a name="-dehydrated--preferred_chain"></a>`preferred_chain`
+
+Data type: `Optional[String[1]]`
+
+Preferred issuer chain.
+
+Default value: `undef`
+
+##### <a name="-dehydrated--acme_profile"></a>`acme_profile`
+
+Data type: `Optional[String[1]]`
+
+Request certificate with specific profile.
+
+Default value: `undef`
+
+##### <a name="-dehydrated--order_timeout"></a>`order_timeout`
+
+Data type: `Optional[Integer[0]]`
+
+Amount of seconds to wait for processing of order until erroring out.
+
+Default value: `undef`
+
+##### <a name="-dehydrated--keep_going"></a>`keep_going`
+
+Data type: `Optional[Boolean]`
+
+Skip over errors during certificate orders and updating of OCSP stapling information.
 
 Default value: `undef`
 
