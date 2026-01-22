@@ -6,12 +6,6 @@ IP_VERSION=<%= String($dehydrated::ip_version, '%p') %>
 <% unless $dehydrated::ca =~ Undef { -%>
 CA=<%= String($dehydrated::ca, '%p') %>
 <% } -%>
-<% unless $dehydrated::ca_terms =~ Undef { -%>
-CA_TERMS=<%= String($dehydrated::ca_terms, '%p') %>
-<% } -%>
-<% unless $dehydrated::license =~ Undef { -%>
-LICENSE=<%= String($dehydrated::license, '%p') %>
-<% } -%>
 <% unless $dehydrated::challengetype =~ Undef { -%>
 CHALLENGETYPE=<%= String($dehydrated::challengetype, '%p') %>
 <% } -%>

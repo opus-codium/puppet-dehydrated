@@ -66,8 +66,6 @@ The following parameters are available in the `dehydrated` class:
 * [`cron_integration`](#-dehydrated--cron_integration)
 * [`ip_version`](#-dehydrated--ip_version)
 * [`ca`](#-dehydrated--ca)
-* [`ca_terms`](#-dehydrated--ca_terms)
-* [`license`](#-dehydrated--license)
 * [`challengetype`](#-dehydrated--challengetype)
 * [`keysize`](#-dehydrated--keysize)
 * [`openssl_cnf`](#-dehydrated--openssl_cnf)
@@ -174,22 +172,6 @@ Default value: `undef`
 Data type: `Optional[Stdlib::Httpurl]`
 
 Path to certificate authority.
-
-Default value: `undef`
-
-##### <a name="-dehydrated--ca_terms"></a>`ca_terms`
-
-Data type: `Optional[Stdlib::Httpurl]`
-
-Path to certificate authority license terms redirect.
-
-Default value: `undef`
-
-##### <a name="-dehydrated--license"></a>`license`
-
-Data type: `Optional[String]`
-
-Path to license agreement.
 
 Default value: `undef`
 

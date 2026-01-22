@@ -13,8 +13,6 @@
 # @param cron_integration Setup cron to automatically renew certificates.
 # @param ip_version Use only this IP version for name resolution.
 # @param ca Path to certificate authority.
-# @param ca_terms Path to certificate authority license terms redirect.
-# @param license Path to license agreement.
 # @param challengetype Challenge type to be used.
 # @param keysize Default keysize for private keys.
 # @param openssl_cnf Path to openssl config file.
@@ -45,8 +43,6 @@ class dehydrated (
 
   Optional[Variant[Integer[4,4],Integer[6,6]]]     $ip_version           = undef,
   Optional[Stdlib::Httpurl]                        $ca                   = undef,
-  Optional[Stdlib::Httpurl]                        $ca_terms             = undef,
-  Optional[String]                                 $license              = undef,
   Optional[Enum['http-01', 'dns-01']]              $challengetype        = undef,
   Optional[Integer[0]]                             $keysize              = undef,
   Optional[String]                                 $openssl_cnf          = undef,
