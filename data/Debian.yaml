@@ -1,5 +1,5 @@
 ---
 dehydrated::apache_user: 'www-data'
-dehydrated::dependencies: ['curl']
+dehydrated::dependencies: ['bsdextrautils', 'curl']
 dehydrated::etcdir: '/home/dehydrated'
 dehydrated::package: ~
