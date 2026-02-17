@@ -19,6 +19,7 @@
 * `dehydrated::domains`: Manage the domains.txt file
 * `dehydrated::package`: Manage the dehydrated package
 * `dehydrated::repo`: Manage the dehydrated code
+* `dehydrated::systemd`: Manage a system timer to refresh certificates
 * `dehydrated::user`: Manage the dehydrated user
 
 ### Defined types
@@ -63,7 +64,8 @@ The following parameters are available in the `dehydrated` class:
 * [`repo_revision`](#-dehydrated--repo_revision)
 * [`dependencies`](#-dehydrated--dependencies)
 * [`apache_integration`](#-dehydrated--apache_integration)
-* [`cron_integration`](#-dehydrated--cron_integration)
+* [`renewal_provider`](#-dehydrated--renewal_provider)
+* [`renewal_interval`](#-dehydrated--renewal_interval)
 * [`dehydrated_user`](#-dehydrated--dehydrated_user)
 * [`dehydrated_group`](#-dehydrated--dehydrated_group)
 * [`ip_version`](#-dehydrated--ip_version)
@@ -175,13 +177,21 @@ Setup apache to serve the generated challenges.
 
 Default value: `false`
 
-##### <a name="-dehydrated--cron_integration"></a>`cron_integration`
+##### <a name="-dehydrated--renewal_provider"></a>`renewal_provider`
 
-Data type: `Boolean`
+Data type: `Enum['cron','systemd','none']`
 
-Setup cron to automatically renew certificates.
+Which provider should trigger certificat renewal attempts.
 
-Default value: `false`
+Default value: `'none'`
+
+##### <a name="-dehydrated--renewal_interval"></a>`renewal_interval`
+
+Data type: `Enum['never','daily','weekly']`
+
+How long to wait between certificate renewal attempts.
+
+Default value: `'daily'`
 
 ##### <a name="-dehydrated--dehydrated_user"></a>`dehydrated_user`
 

@@ -10,7 +10,8 @@
 # @param repo_revision Revision to fetch from the repository providing dehydrated.
 # @param dependencies Extra dependencies needed to run dehydrated.
 # @param apache_integration Setup apache to serve the generated challenges.
-# @param cron_integration Setup cron to automatically renew certificates.
+# @param renewal_provider Which provider should trigger certificat renewal attempts.
+# @param renewal_interval How long to wait between certificate renewal attempts.
 # @param dehydrated_user Which user should dehydrated run as? This will be implicitly enforced when running as root.
 # @param dehydrated_group Which group should dehydrated run as? This will be implicitly enforced when running as root.
 # @param ip_version Resolve names to addresses of IP version only. (curl)
@@ -63,7 +64,9 @@ class dehydrated (
   Array[String]               $dependencies = [],
 
   Boolean                     $apache_integration = false,
-  Boolean                     $cron_integration   = false,
+
+  Enum['cron','systemd','none']  $renewal_provider = 'none',
+  Enum['never','daily','weekly'] $renewal_interval = 'daily',
 
   Optional[String[1]]                              $dehydrated_user      = undef,
   Optional[String[1]]                              $dehydrated_group     = undef,
@@ -135,5 +138,10 @@ class dehydrated (
     include dehydrated::apache
   }
 
-  include dehydrated::cron
+  case $renewal_provider {
+    'cron': { include dehydrated::cron }
+    'systemd': { include dehydrated::systemd }
+    'none': {}
+    default: { fail("Unsupported renewal_provider ${renewal_provider}") }
+  }
 }
