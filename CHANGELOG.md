@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 Each new release typically also includes the latest modulesync defaults.
 These should not affect the functionality of the module.
 
+## [v8.1.0](https://github.com/opus-codium/puppet-dehydrated/tree/v8.1.0) (2026-02-17)
+
+[Full Changelog](https://github.com/opus-codium/puppet-dehydrated/compare/v8.0.0...v8.1.0)
+
+**Implemented enhancements:**
+
+- Add support for Ubuntu [\#79](https://github.com/opus-codium/puppet-dehydrated/pull/79) ([smortex](https://github.com/smortex))
+
 ## [v8.0.0](https://github.com/opus-codium/puppet-dehydrated/tree/v8.0.0) (2026-01-22)
 
 [Full Changelog](https://github.com/opus-codium/puppet-dehydrated/compare/v7.1.0...v8.0.0)
