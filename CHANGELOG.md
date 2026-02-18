@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 Each new release typically also includes the latest modulesync defaults.
 These should not affect the functionality of the module.
 
+## [v8.1.1](https://github.com/opus-codium/puppet-dehydrated/tree/v8.1.1) (2026-02-18)
+
+[Full Changelog](https://github.com/opus-codium/puppet-dehydrated/compare/v8.1.0...v8.1.1)
+
+**Fixed bugs:**
+
+- Fix hexdump package for Debian 10 [\#82](https://github.com/opus-codium/puppet-dehydrated/pull/82) ([smortex](https://github.com/smortex))
+
 ## [v8.1.0](https://github.com/opus-codium/puppet-dehydrated/tree/v8.1.0) (2026-02-17)
 
 [Full Changelog](https://github.com/opus-codium/puppet-dehydrated/compare/v8.0.0...v8.1.0)
