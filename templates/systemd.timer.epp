@@ -1,0 +1,11 @@
+# Managed by Puppet, DO NOT EDIT
+
+[Unit]
+Description=Trigger dehydrated certificates renewal
+
+[Timer]
+OnCalendar=<%= $dehydrated::renewal_interval %>
+Persistent=true
+
+[Install]
+WantedBy=timers.target
