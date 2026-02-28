@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 Each new release typically also includes the latest modulesync defaults.
 These should not affect the functionality of the module.
 
+## [v9.0.0](https://github.com/opus-codium/puppet-dehydrated/tree/v9.0.0) (2026-02-28)
+
+[Full Changelog](https://github.com/opus-codium/puppet-dehydrated/compare/v8.1.1...v9.0.0)
+
+**Breaking changes:**
+
+- Rework the way certificates renewal is managed [\#81](https://github.com/opus-codium/puppet-dehydrated/pull/81) ([smortex](https://github.com/smortex))
+
 ## [v8.1.1](https://github.com/opus-codium/puppet-dehydrated/tree/v8.1.1) (2026-02-18)
 
 [Full Changelog](https://github.com/opus-codium/puppet-dehydrated/compare/v8.1.0...v8.1.1)
