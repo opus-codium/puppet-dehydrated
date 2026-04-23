@@ -4,6 +4,7 @@ fixtures:
     apache: https://github.com/puppetlabs/puppetlabs-apache.git
     concat: https://github.com/puppetlabs/puppetlabs-concat.git
     cron_core: https://github.com/puppetlabs/puppetlabs-cron_core.git
+    ruby_task_helper: https://github.com/puppetlabs/puppetlabs-ruby_task_helper.git
     stdlib: https://github.com/puppetlabs/puppetlabs-stdlib.git
     systemd: https://github.com/voxpupuli/puppet-systemd.git
     vcsrepo: https://github.com/puppetlabs/puppetlabs-vcsrepo.git

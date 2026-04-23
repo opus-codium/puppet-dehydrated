@@ -203,7 +203,7 @@ CHAINCACHE=<%= String($dehydrated::chaincache, '%p') %>
 # Automatic cleanup (default: no)
 #AUTO_CLEANUP="no"
 <% unless $dehydrated::auto_cleanup =~ Undef { -%>
-AUTO_CLEANUP='<%= bool2str($dehydrated::auto_cleanup, 'yes', no) %>'
+AUTO_CLEANUP='<%= bool2str($dehydrated::auto_cleanup, 'yes', 'no') %>'
 <% } -%>
 
 # Delete files during automatic cleanup instead of moving to archive (default: no)
