@@ -1,5 +1,5 @@
 # Renew certificates about to expire
-# @param targets Target fifor certificates renewal
+# @param targets Target for certificates renewal
 plan dehydrated::renew (
   TargetSpec $targets,
 ) {

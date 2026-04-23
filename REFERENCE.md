@@ -687,5 +687,5 @@ The following parameters are available in the `dehydrated::renew` plan:
 
 Data type: `TargetSpec`
 
-Target fifor certificates renewal
+Target for certificates renewal
 
