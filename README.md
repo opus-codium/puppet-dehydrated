@@ -100,14 +100,16 @@ dehydrated::certificate { 'example.com':
 
 ### Renewing certificates with cron
 
-The `cron_integration` parameter of the `dehydrated` class configures cron to renew certificates before they expire.
+The `renewal_provider` parameter of the `dehydrated` class selects how certificate renewal is triggered; set it to `'cron'` to install a cron job that runs at the cadence configured by `renewal_interval` (`'daily'` by default, `'weekly'`, or `'never'`).
 
 ```puppet
 class { 'dehydrated':
   contact_email    => 'user@example.com',
-  cron_integration => true,
+  renewal_provider => 'cron',
 }
 ```
+
+Use `renewal_provider => 'systemd'` instead to ship a `dehydrated.timer` systemd unit with the same renewal cadence.
 
 **Please note that the web server is not automatically restarted when certificates are renewed.**
 
