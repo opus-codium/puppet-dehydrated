@@ -2,13 +2,15 @@
 
 set -e
 
-if [ -x /home/dehydrated/dehydrated ]; then
+if [ -n "$PT_dehydrated_bin" ]; then
+  dehydrated=$PT_dehydrated_bin
+elif dehydrated=$(command -v dehydrated 2>/dev/null) && [ -n "$dehydrated" ]; then
+  :
+elif [ -x /home/dehydrated/dehydrated ]; then
   dehydrated=/home/dehydrated/dehydrated
-elif [ -x /usr/local/bin/dehydrated ]; then
-  dehydrated=/usr/local/bin/dehydrated
 else
   echo "dehydrated(1) was not found on the system" >&2
   exit 1
 fi
 
-"$dehydrated" -c
+"$dehydrated" --accept-terms --cron

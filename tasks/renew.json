@@ -1,3 +1,9 @@
 {
-  "description": "Renew certificates about to expire"
+  "description": "Renew certificates about to expire",
+  "parameters": {
+    "dehydrated_bin": {
+      "description": "Full path to the dehydrated binary. If unset, the task looks up dehydrated on PATH and falls back to well-known install locations.",
+      "type": "Optional[Stdlib::AbsolutePath]"
+    }
+  }
 }

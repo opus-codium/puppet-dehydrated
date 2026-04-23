@@ -671,6 +671,14 @@ Renew certificates about to expire
 
 **Supports noop?** false
 
+#### Parameters
+
+##### `dehydrated_bin`
+
+Data type: `Optional[Stdlib::AbsolutePath]`
+
+Full path to the dehydrated binary. If unset, the task looks up dehydrated on PATH and falls back to well-known install locations.
+
 ## Plans
 
 ### <a name="dehydrated--renew"></a>`dehydrated::renew`
