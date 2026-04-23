@@ -587,7 +587,7 @@ Return the full path to a certificate file
 
 Return the full path to a certificate file
 
-Returns: `String` The path of the cerificate file
+Returns: `String` The path of the certificate file
 
 ##### `hostname`
 
@@ -605,7 +605,7 @@ Return the full path to a certificate chain file
 
 Return the full path to a certificate chain file
 
-Returns: `String` The path of the cerificate chain file
+Returns: `String` The path of the certificate chain file
 
 ##### `hostname`
 
@@ -623,7 +623,7 @@ Return the full path to a certificate fullchain file
 
 Return the full path to a certificate fullchain file
 
-Returns: `String` The path of the cerificate fullchain file
+Returns: `String` The path of the certificate fullchain file
 
 ##### `hostname`
 
@@ -670,6 +670,14 @@ The directory of dehydrated
 Renew certificates about to expire
 
 **Supports noop?** false
+
+#### Parameters
+
+##### `dehydrated_bin`
+
+Data type: `Optional[Stdlib::AbsolutePath]`
+
+Full path to the dehydrated binary. If unset, the task looks up dehydrated on PATH and falls back to well-known install locations.
 
 ## Plans
 
