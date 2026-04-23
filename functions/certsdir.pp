@@ -1,5 +1,5 @@
 # Return the root directory of dehydrated certificates
 # @return [String] The directory of dehydrated certificates
-function dehydrated::certsdir() {
+function dehydrated::certsdir() >> String {
   "${dehydrated::etcdir}/certs"
 }
